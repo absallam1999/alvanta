@@ -1,0 +1,276 @@
+{
+  "category": "Fruits",
+  "description": "Premium quality fruits from the world's best growing regions. Hand-picked at optimal ripeness to ensure perfect flavor, aroma, and nutritional value. Our fruits meet the highest international standards for quality and food safety.",
+  "heroImage": "/images/categories/fruits-hero.jpg",
+  "featured": [
+    {
+      "id": "strawberry-premium",
+      "name": "Premium Strawberries",
+      "variety": "Albion, San Andreas, Camarosa",
+      "image": "/images/products/strawberry-premium.jpg",
+      "description": "Sweet, aromatic strawberries with perfect heart shape and vibrant red color. Grown using advanced techniques for consistent quality and flavor.",
+      "nutrition": {
+        "vitamins": ["C", "K", "B9", "B1", "B6"],
+        "minerals": ["Manganese", "Potassium", "Magnesium", "Copper"],
+        "antioxidants": ["Anthocyanins", "Ellagic Acid", "Quercetin"],
+        "calories": 32,
+        "protein": "0.7g",
+        "carbohydrates": "7.7g",
+        "fiber": "2.0g",
+        "sugar": "4.9g",
+        "fat": "0.3g",
+        "waterContent": "91%",
+        "phytochemicals": ["Flavonoids", "Phenolic Acids"]
+      },
+      "specifications": {
+        "size": "Large (25-35g)",
+        "color": "Bright red with green cap",
+        "brix": "8-12%",
+        "shelfLife": "5-7 days",
+        "packaging": "250g, 500g punnets"
+      },
+      "seasons": {
+        "peak": ["Spring", "Early Summer"],
+        "available": "Year-round with global sourcing",
+        "harvestMonths": ["December-April (Northern Africa)", "May-September (Europe)"]
+      },
+      "growingMethod": "Tabletop, Hydroponic, Soil Beds",
+      "origin": "Egypt, Spain, Morocco, United States",
+      "priceRange": {
+        "wholesale": "$15-25 per 2kg",
+        "retail": "$3-5 per 250g"
+      }
+    },
+    {
+      "id": "mango-premium",
+      "name": "Premium Mangoes",
+      "variety": "Kent, Keitt, Tommy Atkins",
+      "image": "/images/products/mango-premium.jpg",
+      "description": "Sweet, juicy mangoes with rich tropical flavor and smooth texture. Carefully selected for export markets with consistent quality and ripeness.",
+      "nutrition": {
+        "vitamins": ["A", "C", "E", "B6", "K"],
+        "minerals": ["Potassium", "Copper", "Magnesium", "Calcium"],
+        "fiber": "High",
+        "calories": 60,
+        "protein": "0.8g",
+        "carbohydrates": "15.0g",
+        "sugar": "13.7g",
+        "fat": "0.4g",
+        "fiberContent": "1.6g",
+        "betaCarotene": "Very High",
+        "enzymes": ["Amylase", "Protease"],
+        "antioxidants": ["Mangiferin", "Quercetin"]
+      },
+      "specifications": {
+        "weight": "400-600g",
+        "skin": "Green with red blush",
+        "flesh": "Deep orange, fiberless",
+        "shelfLife": "7-14 days at 12°C",
+        "packaging": "4kg cartons"
+      },
+      "seasons": {
+        "peak": ["Spring", "Summer"],
+        "available": "March-September",
+        "harvestMonths": ["March-May (South America)", "June-August (Africa)"]
+      },
+      "growingMethod": "Orchard",
+      "origin": "Peru, Brazil, Egypt, India",
+      "priceRange": {
+        "wholesale": "$20-30 per 4kg",
+        "retail": "$3-5 per piece"
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "strawberry",
+      "name": "Strawberries",
+      "variety": "Albion, San Andreas",
+      "image": "/images/products/strawberry.jpg",
+      "description": "Fresh, sweet strawberries with perfect aroma and texture. Ideal for fresh consumption, desserts, and food processing.",
+      "nutrition": {
+        "vitamins": ["C", "K", "B9", "B1", "B5"],
+        "minerals": ["Manganese", "Potassium", "Iodine", "Folate"],
+        "calories": 33,
+        "protein": "0.7g",
+        "carbohydrates": "8.0g",
+        "fiber": "2.2g",
+        "sugar": "5.1g",
+        "fat": "0.3g",
+        "antioxidants": ["Anthocyanins", "Ellagic Acid"],
+        "waterContent": "90%",
+        "organicAcids": ["Citric Acid", "Malic Acid"]
+      },
+      "specifications": {
+        "size": "Medium to Large",
+        "color": "Vibrant red",
+        "firmness": "Firm but juicy",
+        "shelfLife": "5-7 days",
+        "packaging": "250g & 500g punnets"
+      },
+      "seasons": {
+        "peak": ["Spring", "Early Summer"],
+        "available": "Year-round with global sourcing",
+        "harvestMonths": ["December-April (Northern Africa)", "May-September (Europe)"]
+      },
+      "growingMethod": "Protected Agriculture",
+      "origin": "Egypt, Spain, Morocco"
+    },
+    {
+      "id": "grapes",
+      "name": "Table Grapes",
+      "variety": "Red Globe, Crimson, Thompson",
+      "image": "/images/products/grapes.jpg",
+      "description": "Sweet, crisp table grapes with excellent shelf life. Perfect for snacking and fruit platters with consistent sweetness and size.",
+      "nutrition": {
+        "vitamins": ["C", "K", "B1", "B2", "B6"],
+        "minerals": ["Potassium", "Copper", "Manganese", "Iron"],
+        "calories": 69,
+        "protein": "0.7g",
+        "carbohydrates": "18.1g",
+        "fiber": "0.9g",
+        "sugar": "16.3g",
+        "fat": "0.2g",
+        "antioxidants": ["Resveratrol", "Flavonoids", "Anthocyanins"],
+        "waterContent": "81%",
+        "phytonutrients": ["Quercetin", "Catechins"]
+      },
+      "specifications": {
+        "berrySize": "18-22mm",
+        "brix": "16-20%",
+        "color": "Red, green, or black",
+        "shelfLife": "3-4 weeks",
+        "packaging": "4.5kg cartons"
+      },
+      "seasons": {
+        "peak": ["Summer", "Fall"],
+        "available": "May-January",
+        "bestMonths": ["June", "July", "August", "September", "October"]
+      },
+      "growingMethod": "Vineyard",
+      "origin": "Peru, Chile, South Africa, Egypt"
+    },
+    {
+      "id": "mango",
+      "name": "Mangoes",
+      "variety": "Kent, Keitt",
+      "image": "/images/products/mango.jpg",
+      "description": "Tropical mangoes with sweet, creamy flesh and minimal fiber. The king of fruits with exceptional flavor and nutritional value.",
+      "nutrition": {
+        "vitamins": ["A", "C", "E", "B6", "K", "Folate"],
+        "minerals": ["Potassium", "Copper", "Magnesium", "Calcium"],
+        "calories": 62,
+        "protein": "0.8g",
+        "carbohydrates": "15.3g",
+        "fiber": "1.7g",
+        "sugar": "14.0g",
+        "fat": "0.4g",
+        "betaCarotene": "Extremely High",
+        "enzymes": ["Amylase", "Protease"],
+        "antioxidants": ["Mangiferin", "Gallic Acid"],
+        "waterContent": "83%"
+      },
+      "specifications": {
+        "weight": "450-650g",
+        "skin": "Green to yellow with red blush",
+        "flesh": "Orange, smooth",
+        "shelfLife": "10-14 days",
+        "packaging": "4kg cartons"
+      },
+      "seasons": {
+        "peak": ["Summer", "Spring"],
+        "available": "March-September",
+        "harvestMonths": ["March-May (South America)", "June-August (Africa)"]
+      },
+      "growingMethod": "Orchard",
+      "origin": "Peru, Brazil, Egypt, India"
+    },
+    {
+      "id": "orange",
+      "name": "Oranges",
+      "variety": "Navel, Valencia",
+      "image": "/images/products/orange.jpg",
+      "description": "Juicy, sweet oranges with easy-to-peel skin and high vitamin C content. Perfect for fresh consumption and juice extraction.",
+      "nutrition": {
+        "vitamins": ["C", "A", "B1", "B9", "B5"],
+        "minerals": ["Potassium", "Calcium", "Magnesium", "Phosphorus"],
+        "calories": 47,
+        "protein": "0.9g",
+        "carbohydrates": "11.8g",
+        "fiber": "2.4g",
+        "sugar": "9.4g",
+        "fat": "0.1g",
+        "citricAcid": "High",
+        "antioxidants": ["Hesperidin", "Naringenin", "Beta-cryptoxanthin"],
+        "waterContent": "87%",
+        "flavonoids": ["Polymethoxyflavones"]
+      },
+      "specifications": {
+        "size": "70-85mm diameter",
+        "skin": "Bright orange, medium thickness",
+        "juiceContent": "40-50%",
+        "shelfLife": "3-4 weeks",
+        "packaging": "10kg, 15kg cartons"
+      },
+      "seasons": {
+        "peak": ["Winter"],
+        "available": "November-April",
+        "bestMonths": ["December", "January", "February", "March"]
+      },
+      "growingMethod": "Citrus Orchard",
+      "origin": "Egypt, Spain, South Africa, United States"
+    },
+    {
+      "id": "pomegranate",
+      "name": "Pomegranates",
+      "variety": "Wonderful, Acco",
+      "image": "/images/products/pomegranate.jpg",
+      "description": "Ruby-red pomegranates with sweet-tart arils packed with antioxidants. Known for their health benefits and unique flavor.",
+      "nutrition": {
+        "vitamins": ["C", "K", "B5", "B6", "B9"],
+        "minerals": ["Potassium", "Copper", "Manganese", "Phosphorus"],
+        "calories": 83,
+        "protein": "1.7g",
+        "carbohydrates": "18.7g",
+        "fiber": "4.0g",
+        "sugar": "13.7g",
+        "fat": "1.2g",
+        "antioxidants": ["Punicalagins", "Anthocyanins", "Ellagic Acid"],
+        "waterContent": "78%",
+        "phytonutrients": ["Punicic Acid", "Flavonoids"],
+        "antiInflammatory": "Very High"
+      },
+      "specifications": {
+        "size": "9-12cm diameter",
+        "weight": "250-400g",
+        "arilColor": "Deep red",
+        "shelfLife": "2-3 months",
+        "packaging": "4kg, 8kg cartons"
+      },
+      "seasons": {
+        "peak": ["Fall"],
+        "available": "September-February",
+        "bestMonths": ["October", "November", "December"]
+      },
+      "growingMethod": "Orchard",
+      "origin": "India, Iran, Egypt, Turkey"
+    }
+  ],
+  "qualityStandards": {
+    "certifications": ["GlobalGAP", "ISO 22000", "BRC", "Organic Options"],
+    "grading": "Extra Class & Class I",
+    "sugarContent": "Brix level monitored",
+    "maturityIndex": "Optimal harvest timing"
+  },
+  "packagingOptions": [
+    "Consumer punnets (250g-1kg)",
+    "Bulk cartons (2kg-15kg)",
+    "Protective individual wrapping",
+    "Ventilated containers"
+  ],
+  "ripeningGuidance": {
+    "temperature": "Varies by fruit",
+    "ethyleneSensitive": "Yes for some varieties",
+    "ripeningAtDestination": "Available upon request"
+  }
+}

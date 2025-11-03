@@ -1,0 +1,11 @@
+/* Base Styles */
+@import './base/variables.css';
+@import './base/reset.css';
+
+/* Animations */
+@import './animations/transitions.css';
+
+/* Tailwind Directives*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

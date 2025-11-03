@@ -1,0 +1,101 @@
+{
+  "category": "Crops",
+  "description": "High-value specialty crops and grains for international markets. Our specialty crops portfolio includes unique varieties grown using sustainable practices to meet the demands of discerning customers worldwide.",
+  "heroImage": "/images/categories/crops-hero.jpg",
+  "featured": [
+    {
+      "id": "lima-bean-premium",
+      "name": "Premium Lima Beans",
+      "variety": "Baby Lima, Large Lima",
+      "image": "/images/products/lima-bean-premium.jpg",
+      "description": "Nutritious lima beans with buttery texture and mild flavor. Excellent source of plant-based protein and dietary fiber for health-conscious consumers.",
+      "nutrition": {
+        "protein": "8g per 100g cooked",
+        "fiber": "7g per 100g cooked",
+        "vitamins": ["B1", "B6", "Folate", "K", "B3"],
+        "minerals": ["Iron", "Magnesium", "Potassium", "Zinc", "Phosphorus", "Copper", "Manganese"],
+        "calories": 115,
+        "carbohydrates": "21g",
+        "sugar": "2.9g",
+        "fat": "0.7g",
+        "aminoAcids": ["Lysine", "Tryptophan", "Threonine"],
+        "antioxidants": ["Flavonoids", "Phenolic Acids"],
+        "resistantStarch": "High",
+        "prebioticFiber": "Yes"
+      },
+      "specifications": {
+        "size": "Small (baby) or Large",
+        "color": "Creamy white to pale green",
+        "moistureContent": "14% max",
+        "shelfLife": "12-18 months",
+        "packaging": "25kg bags, 500g retail packs"
+      },
+      "seasons": {
+        "peak": ["Summer"],
+        "available": "Year-round (dried)",
+        "harvestMonths": ["July", "August", "September"]
+      },
+      "growingMethod": "Open Field",
+      "origin": "United States, Egypt, China, Myanmar",
+      "priceRange": {
+        "wholesale": "$25-40 per 25kg",
+        "retail": "$3-5 per 500g"
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "lima-bean",
+      "name": "Lima Beans",
+      "variety": "Baby Lima, Fordhook",
+      "image": "/images/products/lima-bean.jpg",
+      "description": "Versatile legumes known for their creamy texture and nutritional benefits. Perfect for traditional dishes, soups, and healthy meal preparations.",
+      "nutrition": {
+        "protein": "7.8g per 100g cooked",
+        "fiber": "7.2g per 100g cooked",
+        "vitamins": ["B1", "B6", "Folate", "K", "B5"],
+        "minerals": ["Iron", "Magnesium", "Potassium", "Manganese", "Phosphorus", "Copper"],
+        "calories": 113,
+        "carbohydrates": "20.9g",
+        "sugar": "2.8g",
+        "fat": "0.7g",
+        "aminoAcids": ["Lysine", "Tryptophan", "Methionine"],
+        "antioxidants": ["Flavonoids", "Tannins"],
+        "resistantStarch": "Moderate to High",
+        "prebioticFiber": "Yes",
+        "phytonutrients": ["Saponins", "Phytates"]
+      },
+      "specifications": {
+        "type": "Dried beans",
+        "size": "Small (baby) or Large",
+        "color": "Cream to pale green",
+        "shelfLife": "12-18 months",
+        "packaging": "25kg poly bags, 500g consumer packs"
+      },
+      "seasons": {
+        "peak": ["Summer"],
+        "available": "Year-round",
+        "bestMonths": ["July", "August", "September"]
+      },
+      "growingMethod": "Open Field",
+      "origin": "United States, Egypt, China"
+    }
+  ],
+  "qualityStandards": {
+    "certifications": ["GlobalGAP", "ISO 22000", "USDA Organic", "EU Organic", "Non-GMO Verified"],
+    "grading": "Premium Grade A",
+    "purity": "99.9% minimum",
+    "traceability": "Full supply chain documentation"
+  },
+  "packagingOptions": [
+    "Retail packs (250g-2kg)",
+    "Bulk poly bags (5kg-25kg)",
+    "Vacuum sealed packs",
+    "Food-grade containers"
+  ],
+  "storageRequirements": {
+    "temperature": "Cool, dry place below 20°C",
+    "humidity": "Below 60%",
+    "specialNotes": "Protect from sunlight and moisture"
+  }
+}
