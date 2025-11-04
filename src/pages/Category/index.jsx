@@ -778,7 +778,7 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
         </Button>
       </div>
 
-      {/* Filter Sidebar - Fixed desktop styling */}
+      {/* Filter Sidebar */}
       <div
         className={`
         ${isOpen ? 'block' : 'hidden'} 
@@ -932,11 +932,13 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
                               <IconComponent className="w-4 h-4 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
                             )}
                             <span
-                              className={`text-sm font-medium transition-colors ${
-                                isSelected
-                                  ? 'text-emerald-700 dark:text-emerald-300'
-                                  : 'text-gray-900 dark:text-gray-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400'
-                              }`}
+                              className={`text-sm font-medium transition-colors 
+                                ${
+                                  isSelected
+                                    ? 'text-emerald-700 dark:text-emerald-300'
+                                    : 'text-muted dark:text-gray-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400'
+                                }
+                              `}
                             >
                               {option.label}
                             </span>
@@ -1027,7 +1029,7 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
                         ${
                           isSelected
                             ? 'bg-emerald-50 dark:bg-emerald-950/20 border-emerald-200 dark:border-emerald-800'
-                            : 'bg-transparent border-transparent hover:bg-gray-50 dark:hover:bg-gray-900/20'
+                            : 'bg-transparent border-transparent text-muted dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-900/20'
                         }
                       `}
                     >
@@ -1078,7 +1080,7 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
                             className={`text-sm font-medium transition-colors block mb-1 ${
                               isSelected
                                 ? 'text-emerald-700 dark:text-emerald-300'
-                                : 'text-gray-900 dark:text-gray-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400'
+                                : 'text-muted dark:text-gray-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400'
                             }`}
                           >
                             {option.label}

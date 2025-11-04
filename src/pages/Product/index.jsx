@@ -411,7 +411,7 @@ const RelatedProducts = ({ currentProduct, category }) => {
           asChild
           variant="outline"
           size="lg"
-          className="hover:bg-emerald-50"
+          className="relative overflow-hidden group/btn hover:border-emerald-500 transition-all duration-300"
           style={{
             borderColor: 'var(--color-primary)',
             color: 'var(--color-primary)',
@@ -419,8 +419,22 @@ const RelatedProducts = ({ currentProduct, category }) => {
           }}
         >
           <Link to={`/products/${category.toLowerCase()}`}>
-            View All {category}
-            <ArrowLeft className="w-4 h-4 ml-2 rotate-180" />
+            {/* Gradient Overlay on Hover */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
+              initial={false}
+            />
+
+            {/* Shine Effect */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"
+              initial={false}
+            />
+
+            <span className="relative z-10 group-hover/btn:text-white transition-colors duration-300">
+              View All {category}
+            </span>
+            <ArrowLeft className="w-4 h-4 ml-2 rotate-180 relative z-10 group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all duration-300" />
           </Link>
         </Button>
       </motion.div>
