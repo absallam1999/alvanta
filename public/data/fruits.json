@@ -2,85 +2,6 @@
   "category": "Fruits",
   "description": "Premium quality fruits from the world's best growing regions. Hand-picked at optimal ripeness to ensure perfect flavor, aroma, and nutritional value. Our fruits meet the highest international standards for quality and food safety.",
   "heroImage": "/images/categories/fruits-hero.jpg",
-  "featured": [
-    {
-      "id": "strawberry-premium",
-      "name": "Premium Strawberries",
-      "variety": "Albion, San Andreas, Camarosa",
-      "image": "/images/products/strawberry-premium.jpg",
-      "description": "Sweet, aromatic strawberries with perfect heart shape and vibrant red color. Grown using advanced techniques for consistent quality and flavor.",
-      "nutrition": {
-        "vitamins": ["C", "K", "B9", "B1", "B6"],
-        "minerals": ["Manganese", "Potassium", "Magnesium", "Copper"],
-        "antioxidants": ["Anthocyanins", "Ellagic Acid", "Quercetin"],
-        "calories": 32,
-        "protein": "0.7g",
-        "carbohydrates": "7.7g",
-        "fiber": "2.0g",
-        "sugar": "4.9g",
-        "fat": "0.3g",
-        "waterContent": "91%",
-        "phytochemicals": ["Flavonoids", "Phenolic Acids"]
-      },
-      "specifications": {
-        "size": "Large (25-35g)",
-        "color": "Bright red with green cap",
-        "brix": "8-12%",
-        "shelfLife": "5-7 days",
-        "packaging": "250g, 500g punnets"
-      },
-      "seasons": {
-        "peak": ["Spring", "Early Summer"],
-        "available": "Year-round with global sourcing",
-        "harvestMonths": ["December-April (Northern Africa)", "May-September (Europe)"]
-      },
-      "growingMethod": "Tabletop, Hydroponic, Soil Beds",
-      "origin": "Egypt, Spain, Morocco, United States",
-      "priceRange": {
-        "wholesale": "$15-25 per 2kg",
-        "retail": "$3-5 per 250g"
-      }
-    },
-    {
-      "id": "mango-premium",
-      "name": "Premium Mangoes",
-      "variety": "Kent, Keitt, Tommy Atkins",
-      "image": "/images/products/mango-premium.jpg",
-      "description": "Sweet, juicy mangoes with rich tropical flavor and smooth texture. Carefully selected for export markets with consistent quality and ripeness.",
-      "nutrition": {
-        "vitamins": ["A", "C", "E", "B6", "K"],
-        "minerals": ["Potassium", "Copper", "Magnesium", "Calcium"],
-        "fiber": "High",
-        "calories": 60,
-        "protein": "0.8g",
-        "carbohydrates": "15.0g",
-        "sugar": "13.7g",
-        "fat": "0.4g",
-        "fiberContent": "1.6g",
-        "betaCarotene": "Very High",
-        "enzymes": ["Amylase", "Protease"],
-        "antioxidants": ["Mangiferin", "Quercetin"]
-      },
-      "specifications": {
-        "weight": "400-600g",
-        "skin": "Green with red blush",
-        "flesh": "Deep orange, fiberless",
-        "shelfLife": "7-14 days at 12°C",
-        "packaging": "4kg cartons"
-      },
-      "seasons": {
-        "peak": ["Spring", "Summer"],
-        "available": "March-September",
-        "harvestMonths": ["March-May (South America)", "June-August (Africa)"]
-      },
-      "growingMethod": "Orchard",
-      "origin": "Peru, Brazil, Egypt, India",
-      "priceRange": {
-        "wholesale": "$20-30 per 4kg",
-        "retail": "$3-5 per piece"
-      }
-    }
-  ],
   "products": [
     {
       "id": "strawberry",
@@ -114,7 +35,7 @@
         "harvestMonths": ["December-April (Northern Africa)", "May-September (Europe)"]
       },
       "growingMethod": "Protected Agriculture",
-      "origin": "Egypt, Spain, Morocco"
+      "origin": "Egypt"
     },
     {
       "id": "grapes",
@@ -148,7 +69,7 @@
         "bestMonths": ["June", "July", "August", "September", "October"]
       },
       "growingMethod": "Vineyard",
-      "origin": "Peru, Chile, South Africa, Egypt"
+      "origin": "Egypt"
     },
     {
       "id": "mango",
@@ -183,7 +104,7 @@
         "harvestMonths": ["March-May (South America)", "June-August (Africa)"]
       },
       "growingMethod": "Orchard",
-      "origin": "Peru, Brazil, Egypt, India"
+      "origin": "Egypt"
     },
     {
       "id": "orange",
@@ -218,7 +139,7 @@
         "bestMonths": ["December", "January", "February", "March"]
       },
       "growingMethod": "Citrus Orchard",
-      "origin": "Egypt, Spain, South Africa, United States"
+      "origin": "Egypt"
     },
     {
       "id": "pomegranate",
@@ -253,7 +174,7 @@
         "bestMonths": ["October", "November", "December"]
       },
       "growingMethod": "Orchard",
-      "origin": "India, Iran, Egypt, Turkey"
+      "origin": "Egypt"
     }
   ],
   "qualityStandards": {

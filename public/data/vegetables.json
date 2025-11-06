@@ -2,78 +2,6 @@
   "category": "Vegetables",
   "description": "Premium quality vegetables sourced from sustainable farms worldwide. Our vegetable exports meet the highest international standards for freshness, taste, and nutritional value. Grown using eco-friendly practices and harvested at peak quality.",
   "heroImage": "/images/categories/vegetables-hero.jpg",
-  "featured": [
-    {
-      "id": "onion-premium",
-      "name": "Premium Onions",
-      "variety": "Yellow, Red, White",
-      "image": "/images/products/onions-premium.jpg",
-      "description": "High-quality onions with strong flavor and excellent storage properties. Perfect for culinary applications worldwide with consistent size and quality.",
-      "nutrition": {
-        "vitamins": ["C", "B6"],
-        "minerals": ["Potassium", "Manganese"],
-        "antioxidants": ["Quercetin"],
-        "calories": 40,
-        "protein": "1.1g",
-        "carbohydrates": "9.3g",
-        "fiber": "1.7g",
-        "sugar": "4.2g",
-        "fat": "0.1g"
-      },
-      "specifications": {
-        "size": "45-80mm diameter",
-        "shelfLife": "2-3 months",
-        "packaging": "10kg, 20kg, 25kg mesh bags",
-        "certifications": ["GlobalGAP", "ISO 22000"]
-      },
-      "seasons": {
-        "peak": ["Spring", "Fall"],
-        "available": "Year-round",
-        "harvestMonths": ["March-April", "August-September"]
-      },
-      "growingMethod": "Open Field",
-      "origin": "Egypt, India, Netherlands, China",
-      "priceRange": {
-        "wholesale": "$8-15 per 10kg",
-        "retail": "$1-2 per kg"
-      }
-    },
-    {
-      "id": "sweet-potato-premium",
-      "name": "Sweet Potatoes",
-      "variety": "Orange Flesh, White Flesh",
-      "image": "/images/products/sweet-potatoes.jpg",
-      "description": "Naturally sweet root vegetables rich in beta-carotene and fiber. Excellent baking quality and nutritional value for health-conscious markets.",
-      "nutrition": {
-        "vitamins": ["A", "C", "B6"],
-        "minerals": ["Potassium", "Manganese"],
-        "fiber": "High",
-        "calories": 86,
-        "protein": "1.6g",
-        "carbohydrates": "20.1g",
-        "sugar": "4.2g",
-        "fat": "0.1g",
-        "betaCarotene": "High"
-      },
-      "specifications": {
-        "size": "Medium to Large",
-        "fleshColor": "Deep Orange",
-        "shelfLife": "2-4 weeks",
-        "packaging": "5kg, 10kg cartons"
-      },
-      "seasons": {
-        "peak": ["Fall"],
-        "available": "August-March",
-        "harvestMonths": ["September", "October", "November"]
-      },
-      "growingMethod": "Open Field",
-      "origin": "United States, Egypt, China",
-      "priceRange": {
-        "wholesale": "$12-18 per 5kg",
-        "retail": "$2-4 per kg"
-      }
-    }
-  ],
   "products": [
     {
       "id": "onion-yellow",
@@ -104,7 +32,7 @@
         "bestMonths": ["March", "April", "August", "September"]
       },
       "growingMethod": "Open Field",
-      "origin": "Egypt, India, Netherlands"
+      "origin": "Egypt"
     },
     {
       "id": "spring-onion",
@@ -135,7 +63,7 @@
         "bestMonths": ["April", "May", "June", "July"]
       },
       "growingMethod": "Open Field & Greenhouse",
-      "origin": "Mexico, China, Egypt"
+      "origin": "Egypt"
     },
     {
       "id": "sweet-potato",
@@ -167,7 +95,7 @@
         "bestMonths": ["September", "October", "November"]
       },
       "growingMethod": "Open Field",
-      "origin": "United States, Egypt, China"
+      "origin": "Egypt"
     },
     {
       "id": "capsicum",
@@ -199,7 +127,7 @@
         "bestMonths": ["June", "July", "August", "September"]
       },
       "growingMethod": "Greenhouse & Open Field",
-      "origin": "Netherlands, Spain, Turkey, Egypt"
+      "origin": "Egypt"
     },
     {
       "id": "lemon",
@@ -231,7 +159,7 @@
         "bestMonths": ["December", "January", "February", "March"]
       },
       "growingMethod": "Orchard",
-      "origin": "Spain, Turkey, South Africa, Egypt"
+      "origin": "Egypt"
     },
     {
       "id": "garlic",
@@ -263,7 +191,7 @@
         "bestMonths": ["June", "July", "August"]
       },
       "growingMethod": "Open Field",
-      "origin": "China, Spain, Egypt, Argentina"
+      "origin": "Egypt"
     }
   ],
   "qualityStandards": {

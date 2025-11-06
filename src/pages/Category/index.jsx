@@ -11,7 +11,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Clock,
-  MapPin,
   Package,
   Calendar,
   Leaf,
@@ -344,16 +343,6 @@ const ProductCard = ({ product, category, viewMode = 'grid' }) => {
                   }`}
                   style={{ color: 'var(--color-text-muted)' }}
                 >
-                  <MapPin className="w-3 h-3" />
-                  <span>{product.origin?.split(',')[0] || 'Global'}</span>
-                </div>
-
-                <div
-                  className={`flex items-center gap-1 text-xs ${
-                    isListView ? 'flex-shrink-0' : ''
-                  }`}
-                  style={{ color: 'var(--color-text-muted)' }}
-                >
                   <Package className="w-3 h-3" />
                   <span>
                     {product.specifications?.packaging?.[0]?.split(' ')[0] ||
@@ -524,8 +513,7 @@ const FilterSummary = ({ filters, onFilterChange, className = '' }) => {
   const activeFilters = [
     ...filters.season.map(
       (season) => `Season: ${season.replace('-', ' ').toUpperCase()}`
-    ),
-    ...filters.origin.map((origin) => `Origin: ${origin.toUpperCase()}`),
+    )
   ];
 
   if (activeFilters.length === 0) return null;
@@ -618,8 +606,7 @@ const ResultsInfo = ({
 const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
-    season: true,
-    origin: true,
+    season: true
   });
 
   // Toggle section expansion
@@ -706,36 +693,8 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
     ].filter((option) => option.count > 0);
   }, [products]);
 
-  // Generate origin options from actual product data
-  const originOptions = useMemo(() => {
-    if (!products || !Array.isArray(products)) return [];
-
-    const origins = {};
-
-    products.forEach((product) => {
-      if (product.origin) {
-        const originList = product.origin.split(',').map((o) => o.trim());
-        originList.forEach((origin) => {
-          if (origin) {
-            origins[origin] = (origins[origin] || 0) + 1;
-          }
-        });
-      }
-    });
-
-    return Object.entries(origins)
-      .map(([origin, count]) => ({
-        value: origin.toLowerCase(),
-        label: origin,
-        count,
-        description: `${count} product${count !== 1 ? 's' : ''} available`,
-      }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 10);
-  }, [products]);
-
   // Calculate active filter counts
-  const activeFilterCount = filters.season.length + filters.origin.length;
+  const activeFilterCount = filters.season.length;
 
   // Clear all filters
   const handleClearAll = () => {
@@ -978,148 +937,6 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
               </div>
             </div>
 
-            {/* Origin Filter */}
-            <div className="mb-6">
-              <div className="flex items-center justify-between mb-4">
-                <button
-                  onClick={() => toggleSection('origin')}
-                  className="flex items-center gap-2 group w-full text-left"
-                >
-                  <h4
-                    className="font-medium text-sm uppercase tracking-wide flex items-center gap-2"
-                    style={{ color: 'var(--color-text-muted)' }}
-                  >
-                    <MapPin className="w-4 h-4" />
-                    Origin
-                  </h4>
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 flex-shrink-0 ${
-                      expandedSections.origin ? 'rotate-0' : '-rotate-90'
-                    }`}
-                    style={{ color: 'var(--color-text-muted)' }}
-                  />
-                </button>
-
-                {filters.origin.length > 0 && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => handleClearSection('origin')}
-                    className="h-6 px-2 text-xs hover:bg-gray-100 dark:hover:bg-gray-800"
-                    style={{
-                      color: 'var(--color-text-muted)',
-                    }}
-                  >
-                    Clear
-                  </Button>
-                )}
-              </div>
-
-              <div
-                className={`space-y-2 ${expandedSections.origin ? 'block' : 'hidden'}`}
-              >
-                {originOptions.map((option) => {
-                  const isSelected = filters.origin.includes(option.value);
-
-                  return (
-                    <label
-                      key={option.value}
-                      className={`
-                        flex items-start gap-3 cursor-pointer group p-3 rounded-lg transition-all duration-200 border
-                        ${
-                          isSelected
-                            ? 'bg-emerald-50 dark:bg-emerald-950/20 border-emerald-200 dark:border-emerald-800'
-                            : 'bg-transparent border-transparent text-muted dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-900/20'
-                        }
-                      `}
-                    >
-                      <div className="flex items-start gap-3 flex-1 min-w-0">
-                        <div className="relative mt-0.5 flex-shrink-0">
-                          <input
-                            type="checkbox"
-                            checked={isSelected}
-                            onChange={(e) =>
-                              onFilterChange(
-                                'origin',
-                                option.value,
-                                e.target.checked
-                              )
-                            }
-                            className="sr-only"
-                          />
-                          <div
-                            className={`
-                            w-4 h-4 rounded border flex items-center justify-center transition-all duration-200
-                            ${
-                              isSelected
-                                ? 'bg-emerald-500 border-emerald-500'
-                                : 'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 group-hover:border-emerald-300'
-                            }
-                          `}
-                          >
-                            {isSelected && (
-                              <svg
-                                className="w-3 h-3 text-white"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={3}
-                                  d="M5 13l4 4L19 7"
-                                />
-                              </svg>
-                            )}
-                          </div>
-                        </div>
-
-                        <div className="flex-1 min-w-0">
-                          <span
-                            className={`text-sm font-medium transition-colors block mb-1 ${
-                              isSelected
-                                ? 'text-emerald-700 dark:text-emerald-300'
-                                : 'text-muted dark:text-gray-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400'
-                            }`}
-                          >
-                            {option.label}
-                          </span>
-
-                          {option.description && (
-                            <p
-                              className="text-xs"
-                              style={{ color: 'var(--color-text-muted)' }}
-                            >
-                              {option.description}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-
-                      <Badge
-                        variant="secondary"
-                        className="ml-auto text-xs flex-shrink-0 px-2 py-1"
-                        style={{
-                          background: isSelected
-                            ? 'var(--color-primary-100)'
-                            : 'var(--color-bg-secondary)',
-                          color: isSelected
-                            ? 'var(--color-primary-700)'
-                            : 'var(--color-text-muted)',
-                          borderColor: isSelected
-                            ? 'var(--color-primary-200)'
-                            : 'var(--color-border-primary)',
-                        }}
-                      >
-                        {option.count}
-                      </Badge>
-                    </label>
-                  );
-                })}
-              </div>
-            </div>
-
             {/* Reset Button */}
             <Button
               variant="outline"
@@ -1178,17 +995,7 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
                     ).length || 0,
                   color: 'var(--color-primary)',
                   icon: Calendar,
-                },
-                {
-                  label: 'Countries',
-                  value: new Set(
-                    products?.flatMap(
-                      (p) => p.origin?.split(',').map((o) => o.trim()) || []
-                    )
-                  ).size,
-                  color: 'var(--color-text-primary)',
-                  icon: MapPin,
-                },
+                }
               ].map((stat, index) => {
                 const IconComponent = stat.icon;
                 return (
@@ -1335,7 +1142,6 @@ export default function CategoryPage() {
   const [viewMode, setViewMode] = useState('grid');
   const [filters, setFilters] = useState({
     season: [],
-    origin: [],
     availability: [],
   });
   const [currentPage, setCurrentPage] = useState(1);
@@ -1372,15 +1178,6 @@ export default function CategoryPage() {
       });
     }
 
-    // Origin filter
-    if (filters.origin.length > 0) {
-      filtered = filtered.filter((product) =>
-        filters.origin.some((origin) =>
-          product.origin?.toLowerCase().includes(origin)
-        )
-      );
-    }
-
     // Sort products with enhanced season sorting
     filtered = productUtils.sortProducts(filtered, sortBy);
 
@@ -1398,7 +1195,6 @@ export default function CategoryPage() {
     if (filterType === 'clear') {
       setFilters({
         season: [],
-        origin: [],
         availability: [],
       });
       setCurrentPage(1);
@@ -1734,7 +1530,7 @@ export default function CategoryPage() {
                   <Button
                     onClick={() => {
                       setSearchQuery('');
-                      setFilters({ season: [], origin: [], availability: [] });
+                      setFilters({ season: [], availability: [] });
                     }}
                     style={{
                       background: 'var(--gradient-primary)',
