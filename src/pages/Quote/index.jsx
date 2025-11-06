@@ -5,7 +5,6 @@ import submitForm from '../../utils/submitForm';
 import {
   ArrowLeft,
   Clock,
-  DollarSign,
   Home,
   MapPin,
   Phone,
@@ -15,7 +14,6 @@ import {
   Leaf,
   Apple,
   Wheat,
-  Package,
   MessageSquare,
   CheckCircle,
   ChevronRight,
@@ -72,15 +70,19 @@ export default function QuotePage() {
   const navigate = useNavigate();
 
   const [step, setStep] = useState(1);
+  const [error, setError] = useState('');
   const [animate, setAnimate] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+
+  const [cropsData, setCropsData] = useState(null);
+  const [fruitsData, setFruitsData] = useState(null);
+  const [vegetablesData, setVegetablesData] = useState(null);
+
   const [formData, setFormData] = useState({
     serviceType: '',
     productType: '',
     quantity: '',
     deliveryTimeline: '',
-    budget: '',
     firstName: '',
     lastName: '',
     email: '',
@@ -97,6 +99,23 @@ export default function QuotePage() {
   });
 
   useEffect(() => {
+    const loadData = async () => {
+      try {
+        const [fruitsRes, vegetablesRes, cropsRes] = await Promise.all([
+          fetch('/data/fruits.json'),
+          fetch('/data/vegetables.json'),
+          fetch('/data/crops.json'),
+        ]);
+
+        setFruitsData(await fruitsRes.json());
+        setVegetablesData(await vegetablesRes.json());
+        setCropsData(await cropsRes.json());
+      } catch (error) {
+        console.error('Error loading data:', error);
+      }
+    };
+
+    loadData();
     setAnimate(true);
   }, []);
 
@@ -120,8 +139,7 @@ export default function QuotePage() {
       if (
         !formData.productType ||
         !formData.quantity ||
-        !formData.deliveryTimeline ||
-        !formData.budget
+        !formData.deliveryTimeline
       ) {
         setError('Please fill in all product details before continuing.');
         return;
@@ -165,18 +183,25 @@ export default function QuotePage() {
     setFormData((prev) => ({
       ...prev,
       serviceType: serviceId,
+      productType: '',
     }));
     setTimeout(nextStep, 500);
   };
 
-  // Agriculture service options
   const serviceOptions = [
     {
-      id: 'fresh-produce',
-      label: 'Fresh Produce',
+      id: 'vegetables',
+      label: 'Vegetables',
+      icon: Leaf,
+      color: 'from-green-500 to-emerald-500',
+      borderColor: 'border-green-500',
+    },
+    {
+      id: 'fruits',
+      label: 'Fruits',
       icon: Apple,
-      color: 'from-emerald-500 to-green-500',
-      borderColor: 'border-emerald-500',
+      color: 'from-red-500 to-pink-500',
+      borderColor: 'border-red-500',
     },
     {
       id: 'specialty-crops',
@@ -186,51 +211,39 @@ export default function QuotePage() {
       borderColor: 'border-amber-500',
     },
     {
-      id: 'bulk-wholesale',
-      label: 'Bulk Wholesale',
-      icon: Package,
-      color: 'from-blue-500 to-cyan-500',
-      borderColor: 'border-blue-500',
-    },
-    {
       id: 'consultation',
       label: 'Consultation',
       icon: MessageSquare,
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-purple-500 to-indigo-500',
       borderColor: 'border-purple-500',
     },
   ];
 
-  // Product type options based on service
-  const productOptions = {
-    'fresh-produce': [
-      'Fresh Vegetables',
-      'Seasonal Fruits',
-      'Organic Produce',
-      'Leafy Greens',
-      'Root Vegetables',
-    ],
-    'specialty-crops': [
-      'Herbs & Spices',
-      'Medicinal Plants',
-      'Exotic Fruits',
-      'Ancient Grains',
-      'Specialty Legumes',
-    ],
-    'bulk-wholesale': [
-      'Grains & Cereals',
-      'Pulses & Legumes',
-      'Oil Seeds',
-      'Animal Feed',
-      'Export Quality',
-    ],
-    consultation: [
-      'Farm Planning',
-      'Crop Selection',
-      'Soil Analysis',
-      'Market Strategy',
-      'Sustainability Audit',
-    ],
+  // Get product options based on selected service type
+  const getProductOptions = () => {
+    switch (formData.serviceType) {
+      case 'vegetables':
+        return vegetablesData.products.map((product) => product.name);
+      case 'fruits':
+        return fruitsData.products.map((product) => product.name);
+      case 'specialty-crops':
+        return cropsData.products.map((product) => product.name);
+      case 'consultation':
+        return [
+          'Farm Planning & Strategy',
+          'Crop Selection & Rotation',
+          'Soil Analysis & Improvement',
+          'Irrigation System Design',
+          'Pest & Disease Management',
+          'Sustainable Farming Practices',
+          'Market Access & Export Strategy',
+          'Quality Control & Certification',
+          'Supply Chain Optimization',
+          'Custom Agricultural Solutions',
+        ];
+      default:
+        return [];
+    }
   };
 
   // Form field configurations
@@ -239,9 +252,7 @@ export default function QuotePage() {
       label: 'Product Type',
       name: 'productType',
       type: 'select',
-      options: formData.serviceType
-        ? ['', ...productOptions[formData.serviceType]]
-        : [''],
+      options: formData.serviceType ? ['', ...getProductOptions()] : [''],
       icon: Leaf,
     },
     {
@@ -250,11 +261,13 @@ export default function QuotePage() {
       type: 'select',
       options: [
         '',
-        'Under 100 kg',
-        '100-500 kg',
-        '500-2000 kg',
-        '2-10 tons',
-        '10+ tons',
+        '20-25 tons (1 container)',
+        '2-5 containers',
+        '5-10 containers',
+        '10+ containers',
+        'Full truckload (10-25 tons)',
+        'Less than truckload (LTL)',
+        'Bulk vessel shipment',
       ],
       icon: Calculator,
     },
@@ -264,28 +277,15 @@ export default function QuotePage() {
       type: 'select',
       options: [
         '',
-        'ASAP',
-        'Within 1 Week',
+        'ASAP (Immediate)',
         '1-2 Weeks',
         '2-4 Weeks',
-        '1+ Month',
+        '1-2 Months',
+        '2-3 Months',
+        '3+ Months',
+        'Regular Supply (Contract)',
       ],
       icon: Clock,
-    },
-    {
-      label: 'Budget Range',
-      name: 'budget',
-      type: 'select',
-      options: [
-        '',
-        'Under EGP 5,000',
-        'EGP 5,000 - EGP 15,000',
-        'EGP 15,000 - EGP 30,000',
-        'EGP 30,000 - EGP 75,000',
-        'EGP 75,000+',
-      ],
-      icon: DollarSign,
-      fullWidth: true,
     },
   ];
 
@@ -337,7 +337,7 @@ export default function QuotePage() {
       name: 'specialRequirements',
       type: 'textarea',
       placeholder:
-        'Any specific quality standards, certifications, or special handling requirements...',
+        'Any specific quality standards, certifications, packaging requirements, or special handling instructions...',
       fullWidth: true,
     },
   ];
@@ -482,7 +482,7 @@ export default function QuotePage() {
                     className="mb-6"
                     style={{ color: 'var(--color-text-muted)' }}
                   >
-                    Select the type of agricultural products or services you
+                    Select the category of agricultural products or services you
                     need.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -572,6 +572,20 @@ export default function QuotePage() {
                   >
                     Product Details
                   </h2>
+                  <p
+                    className="mb-6 text-sm"
+                    style={{ color: 'var(--color-text-muted)' }}
+                  >
+                    Tell us more about your specific requirements for{' '}
+                    {formData.serviceType === 'vegetables'
+                      ? 'vegetables'
+                      : formData.serviceType === 'fruits'
+                        ? 'fruits'
+                        : formData.serviceType === 'specialty-crops'
+                          ? 'specialty crops'
+                          : 'consultation services'}
+                    .
+                  </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {step2Fields.map((field, index) => {
                       const IconComponent = field.icon;
@@ -611,13 +625,7 @@ export default function QuotePage() {
                               {field.options.map((option, idx) => (
                                 <option
                                   key={option || idx}
-                                  value={
-                                    option === ''
-                                      ? ''
-                                      : option
-                                          .toLowerCase()
-                                          .replace(/\s+/g, '-')
-                                  }
+                                  value={option === '' ? '' : option}
                                   disabled={option === ''}
                                   style={{
                                     background: 'var(--color-bg-primary)',
@@ -664,8 +672,7 @@ export default function QuotePage() {
                       disabled={
                         !formData.productType ||
                         !formData.quantity ||
-                        !formData.deliveryTimeline ||
-                        !formData.budget
+                        !formData.deliveryTimeline
                       }
                       onClick={nextStep}
                       className="text-white font-semibold px-6 py-3 rounded-xl flex items-center gap-2 transition-all duration-300 hover:opacity-90 hover:shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed group"

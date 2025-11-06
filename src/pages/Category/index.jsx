@@ -1618,7 +1618,7 @@ export default function CategoryPage() {
               {[
                 { label: 'Products', value: data.products.length },
                 { label: 'Varieties', value: '20+' },
-                { label: 'Countries', value: '40+' },
+                { label: 'Countries', value: '12+' },
                 { label: 'Quality Score', value: '100%' },
               ].map((stat, i) => (
                 <div

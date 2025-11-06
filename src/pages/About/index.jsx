@@ -80,7 +80,7 @@ export default function AboutPage() {
     },
     {
       icon: Globe,
-      number: 40,
+      number: 12,
       label: 'Countries Served',
       description: 'Global export network',
     },
@@ -138,11 +138,11 @@ export default function AboutPage() {
     {
       icon: Globe,
       title: 'Global Integration',
-      shortDescription: 'Serving 40+ countries with optimized logistics',
+      shortDescription: 'Serving 12+ countries with optimized logistics',
       fullDescription:
         'We navigate complex international regulations and optimize cold-chain logistics for maximum freshness while maintaining the highest quality standards globally.',
       benefits: [
-        '40+ countries',
+        '12+ countries',
         'Cold-chain logistics',
         'Regulatory compliance',
         'Fast delivery',
@@ -452,7 +452,7 @@ export default function AboutPage() {
                 style={{ color: 'var(--color-text-muted)' }}
               >
                 Today, we've grown into a trusted partner for 2,000+ farmers
-                across Egypt, delivering premium agricultural products to 40+
+                across Egypt, delivering premium agricultural products to 12+
                 countries worldwide.
               </p>
             </motion.div>

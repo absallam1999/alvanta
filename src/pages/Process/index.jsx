@@ -286,7 +286,7 @@ export default function ProcessPage() {
 
   const stats = [
     { number: '2000+', label: 'Partner Farms', icon: Sprout },
-    { number: '40+', label: 'Countries Served', icon: Globe },
+    { number: '12+', label: 'Countries Served', icon: Globe },
     { number: '5+', label: 'Years Experience', icon: Clock },
     { number: '100%', label: 'Quality Score', icon: BarChart2 },
   ];

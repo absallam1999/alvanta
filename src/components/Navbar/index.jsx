@@ -93,7 +93,7 @@ const Navbar = () => {
         },
       ],
     },
-    { name: 'Markets', href: '/markets', icon: Store },
+    { name: 'Process', href: '/process', icon: Store },
     { name: 'About', href: '/about', icon: Users },
     { name: 'Contact', href: '/contact', icon: Phone },
   ];

@@ -220,7 +220,7 @@ export default function HelpPage() {
   // Success metrics
   const successMetrics = [
     { icon: Users, value: '2,500+', label: 'Farmers Empowered' },
-    { icon: Globe, value: '40+', label: 'Countries Served' },
+    { icon: Globe, value: '12+', label: 'Countries Served' },
     { icon: Award, value: '98.7%', label: 'Success Rate' },
     { icon: Clock, value: '48h', label: 'Average Quote Time' },
     { icon: Leaf, value: '10k+', label: 'Tons Exported' },

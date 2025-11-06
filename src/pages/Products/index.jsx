@@ -620,30 +620,28 @@ const CategorySection = ({ categoryData, index }) => {
         </motion.div>
 
         {/* View All Button */}
-        {categoryData.products.length > 4 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.5 }}
-            className="text-center"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5 }}
+          className="text-center"
+        >
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="group backdrop-blur-sm transition-all duration-300"
+            style={{
+              background: 'var(--color-bg-primary)',
+              borderColor: 'var(--color-border-primary)',
+            }}
           >
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="group backdrop-blur-sm transition-all duration-300"
-              style={{
-                background: 'var(--color-bg-primary)',
-                borderColor: 'var(--color-border-primary)',
-              }}
-            >
-              <Link to={`/products/${categoryData.category.toLowerCase()}`}>
-                View All {categoryData.category}
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </Link>
-            </Button>
-          </motion.div>
-        )}
+            <Link to={`/products/${categoryData.category.toLowerCase()}`}>
+              View All {categoryData.category}
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
@@ -699,7 +697,7 @@ export default function ProductsPage() {
 
   const stats = [
     { number: '20+', label: 'Product Varieties', icon: Leaf },
-    { number: '40+', label: 'Countries Served', icon: Globe },
+    { number: '12+', label: 'Countries Served', icon: Globe },
     { number: '2000+', label: 'Partner Farms', icon: Users },
     { number: '100%', label: 'Quality Guarantee', icon: Shield },
   ];

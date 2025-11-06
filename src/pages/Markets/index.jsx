@@ -292,7 +292,7 @@ export default function MarketsPage() {
   const statistics = [
     { icon: Target, value: '100%', label: 'Accuracy Rate' },
     { icon: Users, value: '2,500+', label: 'Farmers Served' },
-    { icon: Globe, value: '40+', label: 'Countries' },
+    { icon: Globe, value: '12+', label: 'Countries' },
     { icon: TrendingUp, value: '300%', label: 'Revenue Growth' },
   ];
 

@@ -19,9 +19,6 @@ import {
   Clock,
   TrendingUp,
   Heart,
-  Zap,
-  Cloud,
-  Droplets,
   Sprout,
   Phone,
   Mail,
@@ -232,10 +229,7 @@ const CategoriesSection = () => {
 
                     {/* Featured Badge */}
                     <div className="absolute top-4 right-4 z-20">
-                      <div
-                        className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold"
-                        style={{ color: 'var(--color-text-secondary)' }}
-                      >
+                      <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-700 dark:text-gray-300">
                         {category.featuredCount} Featured
                       </div>
                     </div>
@@ -457,33 +451,10 @@ export default function HomePage() {
   ];
 
   const stats = [
-    { number: '40+', label: 'Countries Served', icon: Globe },
-    { number: '500+', label: 'Global Partners', icon: Users },
+    { number: '12+', label: 'Countries Served', icon: Globe },
+    { number: '25+', label: 'Global Partners', icon: Users },
     { number: '5+', label: 'Years Excellence', icon: Award },
     { number: '24/7', label: 'Support', icon: BarChart2 },
-  ];
-
-  const features = [
-    {
-      icon: Zap,
-      title: 'Smart Farming',
-      desc: 'AI + IoT for 30% higher yields.',
-    },
-    {
-      icon: Cloud,
-      title: 'Climate-Responsive',
-      desc: 'Weather-adaptive farming.',
-    },
-    {
-      icon: Droplets,
-      title: 'Water-Saving',
-      desc: '40% less water via precision.',
-    },
-    {
-      icon: Sprout,
-      title: 'Organic Certified',
-      desc: 'USDA, EU, JAS certified.',
-    },
   ];
 
   const values = [
@@ -495,43 +466,17 @@ export default function HomePage() {
     {
       icon: Truck,
       title: 'Global Logistics',
-      desc: '40+ countries, carbon-neutral.',
+      desc: '12+ countries, carbon-neutral.',
     },
     {
       icon: Users,
       title: 'Farmer-First',
-      desc: '500+ direct farm partners.',
+      desc: '2000+ direct farm partners.',
     },
     {
       icon: Globe,
       title: 'Eco-Responsible',
       desc: 'Zero-waste & regenerative.',
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: 'Sarah Chen',
-      company: 'Global Fresh',
-      role: 'Procurement Director',
-      content:
-        'Alvanta has revolutionized our supply chain with consistent quality and sustainable practices.',
-      rating: 5,
-    },
-    {
-      name: 'Marcus Rodriguez',
-      company: 'European Gourmet',
-      role: 'CEO',
-      content:
-        'Their traceability and commitment to sustainability align perfectly with our brand values.',
-      rating: 5,
-    },
-    {
-      name: 'Aisha Johnson',
-      company: 'Middle East Imports',
-      role: 'Operations Manager',
-      content: 'Seamless logistics and perfect condition on every shipment.',
-      rating: 5,
     },
   ];
 
@@ -951,84 +896,9 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* FEATURES */}
-      <section
-        ref={featuresSectionRef}
-        className="py-16 lg:py-24"
-        style={{ background: 'var(--color-bg-secondary)' }}
-      >
-        <SectionContainer>
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            variants={variants.staggerContainer}
-            viewport={{ once: true }}
-            className="text-center mb-16 max-w-4xl mx-auto"
-          >
-            <motion.h2
-              variants={variants.fadeInUp}
-              className="text-4xl lg:text-5xl font-bold mb-4"
-              style={{ color: 'var(--color-text-primary)' }}
-            >
-              Innovative Solutions
-            </motion.h2>
-            <motion.p
-              variants={variants.fadeInUp}
-              className="text-lg"
-              style={{ color: 'var(--color-text-muted)' }}
-            >
-              Technology-driven agriculture for a sustainable tomorrow.
-            </motion.p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
-              >
-                <Card
-                  className="p-6 text-center h-full flex flex-col transition-all duration-300"
-                  style={{
-                    background: 'var(--color-bg-primary)',
-                    borderColor: 'var(--color-border-primary)',
-                    boxShadow: 'var(--shadow-sm)',
-                  }}
-                >
-                  <div
-                    className="w-14 h-14 mx-auto mb-4 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform"
-                    style={{ background: 'var(--color-primary-50)' }}
-                  >
-                    <feature.icon
-                      className="w-6 h-6"
-                      style={{ color: 'var(--color-primary)' }}
-                    />
-                  </div>
-                  <h3
-                    className="text-xl font-bold mb-2"
-                    style={{ color: 'var(--color-text-primary)' }}
-                  >
-                    {feature.title}
-                  </h3>
-                  <p
-                    className="text-sm flex-grow"
-                    style={{ color: 'var(--color-text-muted)' }}
-                  >
-                    {feature.desc}
-                  </p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </SectionContainer>
-      </section>
-
       {/* ABOUT + STATS */}
       <section
+        ref={featuresSectionRef}
         className="py-16 lg:py-24"
         style={{ background: 'var(--color-bg-secondary)' }}
       >
@@ -1131,94 +1001,6 @@ export default function HomePage() {
       </section>
 
       <CategoriesSection />
-
-      {/* TESTIMONIALS */}
-      <section
-        className="py-16 lg:py-24"
-        style={{ background: 'var(--color-bg-secondary)' }}
-      >
-        <SectionContainer>
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            variants={variants.staggerContainer}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <motion.h2
-              variants={variants.fadeInUp}
-              className="text-4xl lg:text-5xl font-bold mb-4"
-              style={{ color: 'var(--color-text-primary)' }}
-            >
-              Trusted Worldwide
-            </motion.h2>
-            <motion.p
-              variants={variants.fadeInUp}
-              className="text-lg"
-              style={{ color: 'var(--color-text-muted)' }}
-            >
-              Hear from our global partners.
-            </motion.p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.15 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <Card
-                  className="p-6 lg:p-8 h-full flex flex-col transition-all"
-                  style={{
-                    background: 'var(--color-bg-primary)',
-                    borderColor: 'var(--color-border-primary)',
-                    boxShadow: 'var(--shadow-sm)',
-                  }}
-                >
-                  <div className="flex mb-4">
-                    {[...Array(t.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-5 h-5 fill-amber-400 text-amber-400"
-                      />
-                    ))}
-                  </div>
-                  <blockquote
-                    className="italic mb-6 flex-grow"
-                    style={{ color: 'var(--color-text-muted)' }}
-                  >
-                    "{t.content}"
-                  </blockquote>
-                  <div>
-                    <div
-                      className="font-semibold"
-                      style={{ color: 'var(--color-text-primary)' }}
-                    >
-                      {t.name}
-                    </div>
-                    <div
-                      className="text-sm"
-                      style={{ color: 'var(--color-text-muted)' }}
-                    >
-                      {t.role}
-                    </div>
-                    <div
-                      className="text-sm font-medium"
-                      style={{ color: 'var(--color-primary)' }}
-                    >
-                      {t.company}
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </SectionContainer>
-      </section>
 
       {/* SUSTAINABILITY */}
       <section
