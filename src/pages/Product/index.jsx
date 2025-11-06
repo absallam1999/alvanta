@@ -1169,7 +1169,7 @@ const ProductInfo = ({ product, category }) => {
             <Button
               variant="outline"
               size="lg"
-              className="flex-1 h-14"
+              className="flex-1 h-14 group"
               onClick={handleFavoriteToggle}
               style={{
                 borderColor: 'var(--color-border-primary)',
@@ -1178,7 +1178,7 @@ const ProductInfo = ({ product, category }) => {
               }}
             >
               <Heart
-                className={`w-5 h-5 transition-all duration-300 ${
+                className={`w-5 h-5 group-hover:scale-110 transition-all duration-300 ${
                   isFavorite ? 'fill-current scale-110' : ''
                 }`}
                 style={{
@@ -1191,7 +1191,7 @@ const ProductInfo = ({ product, category }) => {
             <Button
               variant="outline"
               size="lg"
-              className="flex-1 h-14"
+              className="flex-1 h-14 group"
               onClick={() => setShowShareModal(true)}
               style={{
                 borderColor: 'var(--color-border-primary)',
@@ -1199,7 +1199,7 @@ const ProductInfo = ({ product, category }) => {
                 background: 'var(--color-bg-primary)',
               }}
             >
-              <Share2 className="w-5 h-5" />
+              <Share2 className="w-5 h-5 group-hover:scale-110 transition" />
             </Button>
           </div>
         </div>
