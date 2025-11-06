@@ -513,7 +513,7 @@ const FilterSummary = ({ filters, onFilterChange, className = '' }) => {
   const activeFilters = [
     ...filters.season.map(
       (season) => `Season: ${season.replace('-', ' ').toUpperCase()}`
-    )
+    ),
   ];
 
   if (activeFilters.length === 0) return null;
@@ -606,7 +606,7 @@ const ResultsInfo = ({
 const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
-    season: true
+    season: true,
   });
 
   // Toggle section expansion
@@ -995,7 +995,7 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
                     ).length || 0,
                   color: 'var(--color-primary)',
                   icon: Calendar,
-                }
+                },
               ].map((stat, index) => {
                 const IconComponent = stat.icon;
                 return (
