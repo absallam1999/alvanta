@@ -278,8 +278,7 @@ export default function QuotePage() {
       options: [
         '',
         'ASAP (Immediate)',
-        '1-2 Weeks',
-        '2-4 Weeks',
+        '3-4 Weeks',
         '1-2 Months',
         '2-3 Months',
         '3+ Months',
