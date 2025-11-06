@@ -347,26 +347,45 @@ const SearchBar = ({ onSearch, searchQuery, searchResults, onResultClick }) => {
     <div className="relative max-w-2xl mx-auto">
       <div className="relative">
         <Search
-          className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 z-10"
-          style={{ color: 'var(--color-primary-800)' }}
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 z-10 transition-colors duration-200"
+          style={{
+            color: isFocused
+              ? 'var(--color-primary-600)'
+              : 'var(--color-primary-500)',
+          }}
         />
         <Input
           ref={inputRef}
           type="text"
-          placeholder="Search for products, varieties, or origins..."
+          placeholder="Search for products, varieties..."
           value={searchQuery}
           onChange={(e) => onSearch(e.target.value)}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setTimeout(() => setIsFocused(false), 200)}
-          className="pl-12 pr-4"
+          className="transition-all duration-200 focus:ring-2 focus:ring-primary-200"
           style={{
-            borderColor: 'var(--color-border-primary)',
+            padding: '1rem 3.5rem 1rem 3rem',
+            borderColor: isFocused
+              ? 'var(--color-primary-300)'
+              : 'var(--color-border-primary)',
             background: 'var(--color-bg-primary)',
             color: 'var(--color-text-primary)',
+            borderRadius: '12px',
+            fontSize: '0.95rem',
+            boxShadow: isFocused ? '0 0 0 3px var(--color-primary-50)' : 'none',
           }}
         />
-        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10">
-          <Badge variant="secondary" className="text-xs">
+        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 z-10">
+          <Badge
+            variant="secondary"
+            className={`text-xs py-1 px-2 transition-all duration-200 ${
+              searchQuery
+                ? 'bg-green-50 border-green-200 text-green-600 animate-pulse'
+                : isFocused
+                  ? 'bg-primary-50 border-primary-200 text-primary-700'
+                  : 'opacity-0'
+            }`}
+          >
             {searchQuery ? 'Searching...' : 'Ready'}
           </Badge>
         </div>
@@ -377,99 +396,108 @@ const SearchBar = ({ onSearch, searchQuery, searchResults, onResultClick }) => {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute top-full left-0 right-0 mt-2 rounded-xl shadow-2xl z-50 overflow-y-auto backdrop-blur-sm"
+          className="relative mt-2 rounded-xl shadow-2xl backdrop-blur-sm"
           style={{
             background: 'var(--color-bg-primary)',
             borderColor: 'var(--color-border-primary)',
           }}
         >
-          <div className="p-2">
-            {searchResults.map(({ product, category }, index) => (
-              <motion.div
-                key={`${product.id}-${category}`}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <button
-                  onClick={() => handleResultClick(product, category)}
-                  className="w-full text-left p-3 rounded-lg transition-all duration-200 flex items-center gap-3 group border border-transparent"
-                  style={{
-                    background: 'transparent',
-                    borderColor: 'var(--color-border-primary)',
-                  }}
+          {/* Scrollable Results Container */}
+          <div
+            className="max-h-80 overflow-y-auto"
+            style={{
+              scrollbarWidth: 'thin',
+              scrollbarColor: 'var(--color-primary) var(--color-bg-secondary)',
+            }}
+          >
+            <div className="p-2">
+              {searchResults.map(({ product, category }, index) => (
+                <motion.div
+                  key={`${product.id}-${category}`}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
                 >
-                  {/* Product Image with Fallback */}
-                  <div
-                    className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-100 to-green-100 dark:from-emerald-900/50 dark:to-green-900/50 flex items-center justify-center flex-shrink-0 overflow-hidden"
-                    style={{ borderColor: 'var(--color-border-primary)' }}
+                  <button
+                    onClick={() => handleResultClick(product, category)}
+                    className="w-full text-left p-3 rounded-lg transition-all duration-200 flex items-center gap-3 group border border-transparent hover:border-emerald-200 dark:hover:border-emerald-800"
+                    style={{
+                      background: 'transparent',
+                      borderColor: 'var(--color-border-primary)',
+                    }}
                   >
-                    {product.image ? (
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          // Fallback to icon
-                          e.target.style.display = 'none';
-                          e.target.nextSibling.style.display = 'flex';
-                        }}
-                      />
-                    ) : null}
-                    {/* Fallback Icon */}
+                    {/* Product Image with Fallback */}
                     <div
-                      className={`w-full h-full flex items-center justify-center ${product.image ? 'hidden' : 'flex'}`}
+                      className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-100 to-green-100 dark:from-emerald-900/50 dark:to-green-900/50 flex items-center justify-center flex-shrink-0 overflow-hidden"
+                      style={{ borderColor: 'var(--color-border-primary)' }}
                     >
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center">
-                        <Leaf className="w-4 h-4 text-white" />
+                      {product.image ? (
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback to icon
+                            e.target.style.display = 'none';
+                            e.target.nextSibling.style.display = 'flex';
+                          }}
+                        />
+                      ) : null}
+                      {/* Fallback Icon */}
+                      <div
+                        className={`w-full h-full flex items-center justify-center ${product.image ? 'hidden' : 'flex'}`}
+                      >
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center">
+                          <Leaf className="w-4 h-4 text-white" />
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Product Info */}
-                  <div className="flex-1 min-w-0">
+                    {/* Product Info */}
+                    <div className="flex-1 min-w-0">
+                      <div
+                        className="font-medium truncate transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
+                        style={{ color: 'var(--color-text-primary)' }}
+                      >
+                        {product.name}
+                      </div>
+                      <div className="text-sm flex items-center gap-2 mt-1">
+                        <span className="truncate bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded-full text-xs">
+                          {category}
+                        </span>
+                        {product.variety && (
+                          <>
+                            <span style={{ color: 'var(--color-text-muted)' }}>
+                              •
+                            </span>
+                            <span
+                              className="truncate"
+                              style={{ color: 'var(--color-text-muted)' }}
+                            >
+                              {product.variety}
+                            </span>
+                          </>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Arrow Icon */}
+                    <ChevronRight
+                      className="w-4 h-4 flex-shrink-0 transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
+                      style={{ color: 'var(--color-text-muted)' }}
+                    />
+                  </button>
+
+                  {/* Separator */}
+                  {index < searchResults.length - 1 && (
                     <div
-                      className="font-medium truncate transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
-                      style={{ color: 'var(--color-text-primary)' }}
-                    >
-                      {product.name}
-                    </div>
-                    <div className="text-sm flex items-center gap-2 mt-1">
-                      <span className="truncate bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded-full text-xs">
-                        {category}
-                      </span>
-                      {product.variety && (
-                        <>
-                          <span style={{ color: 'var(--color-text-muted)' }}>
-                            •
-                          </span>
-                          <span
-                            className="truncate"
-                            style={{ color: 'var(--color-text-muted)' }}
-                          >
-                            {product.variety}
-                          </span>
-                        </>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Arrow Icon */}
-                  <ChevronRight
-                    className="w-4 h-4 flex-shrink-0 transition-colors group-hover:text-emerald-600 dark:group-hover:text-emerald-400"
-                    style={{ color: 'var(--color-text-muted)' }}
-                  />
-                </button>
-
-                {/* Separator */}
-                {index < searchResults.length - 1 && (
-                  <div
-                    className="mx-3 my-1 border-b"
-                    style={{ borderColor: 'var(--color-border-primary)' }}
-                  />
-                )}
-              </motion.div>
-            ))}
+                      className="mx-3 my-1 border-b"
+                      style={{ borderColor: 'var(--color-border-primary)' }}
+                    />
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           {/* Footer with search info */}

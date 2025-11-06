@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import submitForm from '../../utils/submitForm';
+
 import {
   ArrowLeft,
   Clock,
@@ -140,8 +142,7 @@ export default function QuotePage() {
     setError('');
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await submitForm(formData, 'quote');
 
       // Show success step
       setAnimations((prev) => ({ ...prev, submit: true }));
@@ -810,7 +811,7 @@ export default function QuotePage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={() => navigate('/')}
-                  className="text-white font-semibold px-6 py-3 rounded-xl flex items-center gap-2 transition-all duration-300 hover:opacity-90 hover:shadow-lg active:scale-95 group"
+                  className="text-white font-semibold px-6 py-3 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 hover:opacity-90 hover:shadow-lg active:scale-95 group"
                   style={{
                     background: 'var(--gradient-primary)',
                   }}

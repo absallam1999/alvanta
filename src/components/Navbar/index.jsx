@@ -1090,9 +1090,9 @@ const Navbar = () => {
 
                 {/* Mobile CTA Button */}
                 <motion.a
-                  href="/contact"
+                  href="/quote"
                   whileTap={{ scale: 0.98 }}
-                  className="flex items-center justify-center space-x-2 px-6 py-3.5 mt-4 rounded-xl font-semibold text-base text-white transition-all duration-300 relative overflow-hidden group/mobile-cta"
+                  className="flex items-center justify-center space-x-2 px-6 py-3.5 mt-4 rounded-xl font-semibold text-base text-white hover:text-white transition-all duration-300 relative overflow-hidden group/mobile-cta"
                   style={{
                     background: 'var(--gradient-primary)',
                     boxShadow: 'var(--shadow-lg)',

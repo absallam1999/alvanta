@@ -458,7 +458,7 @@ export default function HomePage() {
 
   const stats = [
     { number: '40+', label: 'Countries Served', icon: Globe },
-    { number: '2,000+', label: 'Global Partners', icon: Users },
+    { number: '500+', label: 'Global Partners', icon: Users },
     { number: '5+', label: 'Years Excellence', icon: Award },
     { number: '24/7', label: 'Support', icon: BarChart2 },
   ];
@@ -732,11 +732,8 @@ export default function HomePage() {
                 style={{ color: 'var(--color-text-muted)' }}
               >
                 Alvanta pioneers sustainable agriculture, connecting premium
-                farms with global markets through{' '}
-                <span className="font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/30 px-1 rounded">
-                  innovative technology
-                </span>
-                and uncompromising quality standards.
+                farms with global markets through innovative technology and
+                uncompromising quality standards.
               </motion.p>
 
               {/* Stats */}

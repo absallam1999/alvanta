@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import submitForm from '../../utils/submitForm';
+
 import {
   Mail,
   Phone,
@@ -15,6 +17,7 @@ import {
   Building2,
   MessageSquare,
   PhoneCall,
+  AlertCircle,
 } from 'lucide-react';
 import { Button } from '../../components/ui/button';
 import { Badge } from '../../components/ui/badge';
@@ -49,6 +52,7 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const contactInfo = [
     {
@@ -148,21 +152,107 @@ export default function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 2000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        subject: '',
-        message: '',
-        inquiryType: 'general',
-      });
-      setIsSubmitted(false);
-    }, 5000);
+    setError('');
+
+    try {
+      // Validation
+      if (!formData.name?.trim()) throw new Error('Please enter your name');
+      if (!formData.email?.trim()) throw new Error('Please enter your email');
+      if (!formData.subject?.trim()) throw new Error('Please enter a subject');
+      if (!formData.message?.trim())
+        throw new Error('Please enter your message');
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        throw new Error('Please enter a valid email address');
+      }
+
+      await submitForm(formData, 'contact');
+
+      // Show success after a short delay
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          subject: '',
+          message: '',
+          inquiryType: 'general',
+        });
+        setTimeout(() => setIsSubmitted(false), 5000);
+      }, 1000);
+    } catch (error) {
+      console.error('Submission error:', error);
+      setIsSubmitting(false);
+      setError(error.message || 'Failed to send message. Please try again.');
+    }
   };
+
+  // Error state component
+  if (error) {
+    return (
+      <div
+        className="min-h-screen flex items-center justify-center p-6 transition-colors duration-300"
+        style={{
+          background: 'var(--color-bg-primary)',
+        }}
+      >
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, type: 'spring' }}
+          className="max-w-md w-full"
+        >
+          <div
+            className="rounded-2xl p-8 shadow-lg text-center transition-colors duration-300"
+            style={{
+              background: 'var(--color-bg-primary)',
+              border: '1px solid var(--color-red-200)',
+            }}
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+              className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center bg-red-100"
+            >
+              <AlertCircle className="w-10 h-10 text-red-600" />
+            </motion.div>
+            <h2 className="text-3xl font-bold mb-4 text-red-600">
+              Sending Failed
+            </h2>
+            <p className="mb-4 leading-relaxed text-red-700">{error}</p>
+            <p className="mb-6 text-sm text-red-600">
+              You can also reach us directly at contact@alvantaexport.com
+            </p>
+            <div className="flex gap-3">
+              <Button
+                onClick={() => setError('')}
+                size="lg"
+                className="flex-1"
+                variant="outline"
+              >
+                Try Again
+              </Button>
+              <Button
+                onClick={() => navigate('/')}
+                size="lg"
+                className="flex-1"
+                style={{
+                  background: 'var(--gradient-primary)',
+                  color: 'var(--color-primary-foreground)',
+                }}
+              >
+                Return Home
+              </Button>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
 
   if (isSubmitted) {
     return (
@@ -592,6 +682,7 @@ export default function ContactPage() {
                       placeholder="John Doe"
                     />
                   </div>
+
                   <div>
                     <label
                       htmlFor="email"

@@ -290,7 +290,7 @@ const ProductCard = ({ product, category, viewMode = 'grid' }) => {
             <div className={isListView ? 'flex-1 min-w-0 pr-4' : ''}>
               <div
                 className={`flex items-start justify-between ${
-                  isListView ? 'mb-1' : 'mb-2'
+                  isListView ? 'mt-1' : 'mb-2'
                 }`}
               >
                 <h3
@@ -836,7 +836,7 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
                   className="flex items-center gap-2 group w-full text-left"
                 >
                   <h4
-                    className="font-medium text-sm uppercase tracking-wide flex items-center gap-2"
+                    className="font-medium uppercase tracking-wide flex items-center gap-2"
                     style={{ color: 'var(--color-text-muted)' }}
                   >
                     <Calendar className="w-4 h-4" />
@@ -876,7 +876,7 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
                     <label
                       key={option.value}
                       className={`
-                        flex items-start gap-3 cursor-pointer group p-3 rounded-lg transition-all duration-200 border
+                        flex items-start gap-3 text-sm cursor-pointer group p-3 rounded-lg transition-all duration-200 border
                         ${
                           isSelected
                             ? 'bg-emerald-50 dark:bg-emerald-950/20 border-emerald-200 dark:border-emerald-800'
@@ -932,7 +932,7 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
                               <IconComponent className="w-4 h-4 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
                             )}
                             <span
-                              className={`text-sm font-medium transition-colors 
+                              className={`text-sm font-small transition-colors 
                                 ${
                                   isSelected
                                     ? 'text-emerald-700 dark:text-emerald-300'
@@ -1638,13 +1638,6 @@ export default function CategoryPage() {
         </div>
       </section>
 
-      {/* Filter Summary */}
-      <FilterSummary
-        filters={filters}
-        onFilterChange={handleFilterChange}
-        className="mt-4"
-      />
-
       {/* Products Section */}
       <section
         className="py-12"
@@ -1653,6 +1646,11 @@ export default function CategoryPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <Breadcrumb category={data.category} />
+          <FilterSummary
+            filters={filters}
+            onFilterChange={handleFilterChange}
+            className="mt-4"
+          />
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar */}
             <div className="lg:w-64 flex-shrink-0">

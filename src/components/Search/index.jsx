@@ -282,7 +282,7 @@ const SearchOverlay = ({
                             style={{
                               backgroundColor:
                                 selectedIndex === index
-                                  ? 'var(--color-primary-50)'
+                                  ? 'var(--color-bg-secondary)'
                                   : 'transparent',
                               border:
                                 selectedIndex === index

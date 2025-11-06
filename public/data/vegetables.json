@@ -259,7 +259,7 @@
       },
       "seasons": {
         "peak": ["Summer"],
-        "available": "Year-round (stored)",
+        "available": "Year-round",
         "bestMonths": ["June", "July", "August"]
       },
       "growingMethod": "Open Field",

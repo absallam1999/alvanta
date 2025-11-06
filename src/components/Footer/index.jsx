@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import submitForm from '../../utils/submitForm';
+
 import {
   Facebook,
   Twitter,
@@ -11,19 +13,51 @@ import {
   Phone,
   MapPin,
   Send,
+  Check,
   ArrowRight,
 } from 'lucide-react';
 import { config } from '../../config/env';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState('');
   const { resolvedTheme } = useTheme();
+  const currentYear = new Date().getFullYear();
+
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [submittedEmails, setSubmittedEmails] = useState(new Set());
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
-    if (!email) return;
+
+    if (isLoading || isSubscribed || !email) return;
+
+    // Check if email was already submitted
+    if (submittedEmails.has(email.toLowerCase())) {
+      alert('This email has already been subscribed!');
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      submitForm(email, 'newsletter');
+      setIsSubscribed(true);
+
+      // Add email to submitted set
+      setSubmittedEmails((prev) => new Set([...prev, email.toLowerCase()]));
+
+      setEmail('');
+
+      setTimeout(() => {
+        setIsSubscribed(false);
+      }, 3000);
+    } catch (error) {
+      console.error('Subscription failed:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {}, [resolvedTheme]);
@@ -134,7 +168,7 @@ const Footer = () => {
                       style={{
                         letterSpacing: '-2px',
                         fontWeight: '900',
-                        color: 'var(--color-text-primary)', // FIXED: Use CSS variable instead of hardcoded colors
+                        color: 'var(--color-text-primary)',
                       }}
                       whileHover={{ x: 1 }}
                     >
@@ -197,7 +231,7 @@ const Footer = () => {
                   <h3
                     className="font-semibold mb-4 text-sm uppercase tracking-wider transition-colors duration-300"
                     style={{
-                      color: 'var(--color-text-primary)', // FIXED: Use CSS variable instead of hardcoded colors
+                      color: 'var(--color-text-primary)',
                     }}
                   >
                     Company
@@ -238,7 +272,7 @@ const Footer = () => {
                   <h3
                     className="font-semibold mb-4 text-sm uppercase tracking-wider transition-colors duration-300"
                     style={{
-                      color: 'var(--color-text-primary)', // FIXED: Use CSS variable instead of hardcoded colors
+                      color: 'var(--color-text-primary)',
                     }}
                   >
                     Products
@@ -278,7 +312,7 @@ const Footer = () => {
                   <h3
                     className="font-semibold mb-4 text-sm uppercase tracking-wider transition-colors duration-300"
                     style={{
-                      color: 'var(--color-text-primary)', // FIXED: Use CSS variable instead of hardcoded colors
+                      color: 'var(--color-text-primary)',
                     }}
                   >
                     Logistics
@@ -328,7 +362,7 @@ const Footer = () => {
                 <h3
                   className="font-semibold mb-3 flex items-center gap-2 transition-colors duration-300"
                   style={{
-                    color: 'var(--color-text-primary)', // FIXED: Use CSS variable instead of hardcoded colors
+                    color: 'var(--color-text-primary)',
                   }}
                 >
                   <Mail
@@ -347,6 +381,7 @@ const Footer = () => {
                 >
                   Get the latest updates on products and export opportunities.
                 </p>
+
                 <form onSubmit={handleSubscribe} className="space-y-3">
                   <div className="relative">
                     <input
@@ -355,7 +390,8 @@ const Footer = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email"
                       required
-                      className="w-full px-4 py-3 rounded-lg border text-sm placeholder-gray-500 focus:ring-2 focus:border-transparent transition-all duration-200 shadow-sm"
+                      disabled={isLoading || isSubscribed}
+                      className="w-full px-4 py-3 rounded-lg border text-sm placeholder-gray-500 focus:ring-2 focus:border-transparent transition-all duration-200 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
                       style={{
                         backgroundColor: 'var(--color-bg-secondary)',
                         borderColor: 'var(--color-border-primary)',
@@ -365,14 +401,30 @@ const Footer = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-white font-medium transition-all duration-300 group shadow-md hover:shadow-lg"
+                    disabled={isLoading || isSubscribed}
+                    className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-white font-medium transition-all duration-300 group shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-md"
                     style={{
-                      background: 'var(--gradient-primary)',
+                      background: isSubscribed
+                        ? 'var(--color-success)'
+                        : 'var(--gradient-primary)',
                       boxShadow: 'var(--shadow)',
                     }}
                   >
-                    <Send className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                    <span>Subscribe</span>
+                    {isSubscribed ? (
+                      <>
+                        <Check className="w-4 h-4" />
+                        <span>Subscribed!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send
+                          className={`w-4 h-4 ${isLoading ? 'animate-pulse' : 'group-hover:scale-110 transition-transform'}`}
+                        />
+                        <span>
+                          {isLoading ? 'Subscribing...' : 'Subscribe'}
+                        </span>
+                      </>
+                    )}
                   </button>
                 </form>
 
