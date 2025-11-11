@@ -1010,7 +1010,7 @@ const ProductInfo = ({ product, category }) => {
   const categoryIcons = {
     Vegetables: Leaf,
     Fruits: Apple,
-    'Specialty Crops': Wheat,
+    Crops: Wheat,
   };
 
   const IconComponent = categoryIcons[category] || Leaf;

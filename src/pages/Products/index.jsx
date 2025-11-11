@@ -72,7 +72,7 @@ const ProductCard = ({ product, category }) => {
   const categoryIcons = {
     Vegetables: Leaf,
     Fruits: Apple,
-    'Specialty Crops': Wheat,
+    Crops: Wheat,
   };
 
   const IconComponent = categoryIcons[category] || Leaf;
@@ -547,7 +547,7 @@ const CategorySection = ({ categoryData, index }) => {
   const categoryIcons = {
     Vegetables: Leaf,
     Fruits: Apple,
-    'Specialty Crops': Wheat,
+    Crops: Wheat,
   };
 
   const IconComponent = categoryIcons[categoryData.category] || Leaf;

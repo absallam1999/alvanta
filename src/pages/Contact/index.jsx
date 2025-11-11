@@ -91,7 +91,7 @@ export default function ContactPage() {
   const globalPresence = [
     {
       label: 'Countries Served',
-      value: '40+',
+      value: '12+',
       icon: Globe,
     },
     {
