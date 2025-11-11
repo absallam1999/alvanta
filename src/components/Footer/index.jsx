@@ -87,10 +87,26 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, href: 'https://www.linkedin.com/company/alvanta-llc', label: 'Facebook' },
-    { icon: <Twitter className="w-5 h-5" />, href: 'https://www.linkedin.com/company/alvanta-llc', label: 'Twitter' },
-    { icon: <Instagram className="w-5 h-5" />, href: 'https://www.linkedin.com/company/alvanta-llc', label: 'Instagram' },
-    { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/company/alvanta-llc', label: 'LinkedIn' },
+    {
+      icon: <Facebook className="w-5 h-5" />,
+      href: 'https://www.linkedin.com/company/alvanta-llc',
+      label: 'Facebook',
+    },
+    {
+      icon: <Twitter className="w-5 h-5" />,
+      href: 'https://www.linkedin.com/company/alvanta-llc',
+      label: 'Twitter',
+    },
+    {
+      icon: <Instagram className="w-5 h-5" />,
+      href: 'https://www.linkedin.com/company/alvanta-llc',
+      label: 'Instagram',
+    },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      href: 'https://www.linkedin.com/company/alvanta-llc',
+      label: 'LinkedIn',
+    },
   ];
 
   const contactInfo = [

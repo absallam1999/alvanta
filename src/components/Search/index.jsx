@@ -118,7 +118,7 @@ const SearchOverlay = ({
   // Quick search suggestions
   const quickSearchTerms = [
     'Strawberries',
-    'Premium Mangoes',
+    'Mangoes',
     'Vegetables',
     'Sweet Potato',
     'Garlic Bulbs',
@@ -304,6 +304,7 @@ const SearchOverlay = ({
                                   color: 'var(--color-primary)',
                                 }}
                               />
+                              <img src={product.image} />
                             </div>
                             <div className="flex-1 min-w-0">
                               <h4
