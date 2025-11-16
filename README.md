@@ -28,10 +28,9 @@ The project is designed to be **fast**, **maintainable**, and **visually appeali
 ├─ styles/
 └─ App.jsx
 
-
 ---
 
-## 🧪 Features  
+## Features  
 Fully responsive design (mobile, tablet, desktop)  
 Consistent, brand-aligned UI for agriculture exports  
 Modern Tailwind-based styling  
@@ -62,6 +61,6 @@ Open your browser at http://localhost:5173 (or whichever port Vite uses).
    npm run build
 This will generate an optimized production build inside the dist/ directory.
 
-## Live Prview: [AlvantaExport](https://www.alvantaexport.com/).
 
+## Live Prview: [AlvantaExport](https://www.alvantaexport.com/).
 ## Created By: [Absallam](https://github.com/absallam1999).
