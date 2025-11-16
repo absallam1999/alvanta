@@ -1,4 +1,4 @@
-import { useRef, useState, useMemo } from 'react';
+import { useRef, useState, useMemo, useEffect } from 'react';
 import { motion, useScroll, useInView } from 'framer-motion';
 import {
   Search,
@@ -648,6 +648,10 @@ const CategorySection = ({ categoryData, index }) => {
 };
 
 export default function ProductsPage() {
+  useEffect(() => {
+    document.title = 'Products - Alvanta';
+  }, []);
+
   const { scrollYProgress } = useScroll();
   const { data, loading, error } = useAllCategories();
   const [searchQuery, setSearchQuery] = useState('');

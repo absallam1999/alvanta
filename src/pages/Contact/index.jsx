@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import submitForm from '../../utils/submitForm';
 
@@ -41,6 +41,10 @@ const ModernMap = () => {
 };
 
 export default function ContactPage() {
+  useEffect(() => {
+    document.title = 'Contact - Alvanta';
+  }, []);
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',

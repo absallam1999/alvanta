@@ -1,12 +1,67 @@
-Alvanta is an Egyptian company specialized in exporting agricultural products to global markets. It is committed to providing high-quality agricultural products that conform to international specifications.
+# Alvanta – Agriculture Exports Company Website  
 
-The company relies on a network of reliable suppliers and a rigorous inspection system to ensure the safety and quality of the product from the farm to the customer. The company aims to enhance the position of Egyptian exports in foreign markets and build long-term commercial relationships based on trust and sustainability
+A modern, responsive **React.js** application built for an agriculture-exports company.
+
+---
+
+## Project Overview  
+**Alvanta** is a responsive, high-performance web front-end built with **React.js**, **Tailwind CSS**, and **Vite**.  
+It showcases an agricultural export company's services, produce portfolio, and brand story through a clean, elegant, and scalable user interface.  
+
+The project is designed to be **fast**, **maintainable**, and **visually appealing** across all devices.
+
+---
+
+## Tech Stack  
+- **Frontend:** React.js (JavaScript)  
+- **Styling:** Tailwind CSS  
+- **Bundler / Dev Server:** Vite  
+- **Linting / Formatting:** ESLint, Prettier  
+- **Build & Deployment:** Optimized for production, ready for hosting (e.g., Vercel, Netlify)  
+
+**Folder Structure:**
+├─ public/
+└─ src/
+├─ assets/
+├─ components/
+├─ pages/
+├─ styles/
+└─ App.jsx
 
 
-Zein Al Abdeen st. from Al-Thawra st.,
-Al-Mahmoudiah 22718,
-Al-Behira,
-Egypt
-+201001188044
+---
 
-contact@alvantaexport.com
+## 🧪 Features  
+Fully responsive design (mobile, tablet, desktop)  
+Consistent, brand-aligned UI for agriculture exports  
+Modern Tailwind-based styling  
+SEO-friendly and optimized build (Vite)  
+Component-based architecture for easy maintenance  
+Clean, linted, and formatted code  
+
+---
+
+## Setup & Installation  
+
+1. **Clone the repository:**  
+   ```bash
+   git clone https://github.com/absallam1999/alvanta.git
+   cd alvanta
+
+2. **Install dependencies:**  
+   ```bash
+   npm install
+
+3. **Run in development mode:**  
+   ```bash
+   npm run dev
+Open your browser at http://localhost:5173 (or whichever port Vite uses).
+
+4. **Build for production:**  
+   ```bash
+   npm run build
+This will generate an optimized production build inside the dist/ directory.
+
+## Live Prview: [AlvantaExport](https://www.alvantaexport.com/).
+
+## Created By: [Absallam](https://github.com/absallam1999).

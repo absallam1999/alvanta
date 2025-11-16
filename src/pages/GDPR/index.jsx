@@ -143,6 +143,10 @@ export default function GDPRCompliance() {
     },
   ];
 
+  useEffect(() => {
+    document.title = 'GDPR - Alvanta';
+  }, []);
+
   return (
     <div
       className="min-h-screen relative overflow-hidden"

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Cookie, Settings, XCircle, Check, Globe } from 'lucide-react';
 import { Button } from '../../components/ui/button';
@@ -46,6 +47,9 @@ const stagger = {
 };
 
 export default function CookiesPage() {
+  useEffect(() => {
+    document.title = 'Cookies - Alvanta';
+  }, []);
   return (
     <div
       className="min-h-screen relative overflow-hidden"

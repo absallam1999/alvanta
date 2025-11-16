@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -1622,9 +1622,7 @@ const ProductDisplay = ({ product, category }) => {
             >
               <span className="flex items-center gap-2 transition-colors group-hover:text-emerald-600">
                 <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                <span style={{ color: 'var(--color-text-muted)' }}>
-                  Back
-                </span>
+                <span style={{ color: 'var(--color-text-muted)' }}>Back</span>
               </span>
             </Button>
           </motion.div>
@@ -1765,6 +1763,12 @@ const ProductDisplay = ({ product, category }) => {
 export default function ProductPage() {
   const { id } = useParams();
   const { product, category, loading, error } = useProductById(id);
+
+  useEffect(() => {
+    if (product && product.name) {
+      document.title = `${product.name} - Alvanta`;
+    }
+  }, [product]);
 
   // Show skeleton during loading
   if (loading) {

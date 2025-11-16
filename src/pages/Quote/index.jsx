@@ -99,6 +99,7 @@ export default function QuotePage() {
   });
 
   useEffect(() => {
+    document.title = 'Quote - Alvanta';
     const loadData = async () => {
       try {
         const [fruitsRes, vegetablesRes, cropsRes] = await Promise.all([

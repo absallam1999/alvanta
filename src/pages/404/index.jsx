@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -57,6 +58,10 @@ const quickActions = [
 ];
 
 export default function ErrorPage() {
+  useEffect(() => {
+    document.title = 'Not Found - Alvanta';
+  }, []);
+
   return (
     <div className="min-h-screen bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] flex items-center justify-center p-6 relative overflow-hidden transition-colors duration-300">
       <FloatingIcons />

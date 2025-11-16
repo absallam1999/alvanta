@@ -1,4 +1,4 @@
-import { useRef, useState, useMemo } from 'react';
+import { useRef, useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, useScroll, useInView } from 'framer-motion';
 import {
@@ -401,7 +401,7 @@ const ProductCard = ({ product, category, viewMode = 'grid' }) => {
   );
 };
 
-// Pagination with improved dark mode
+// Pagination
 const Pagination = ({
   currentPage,
   totalPages,
@@ -617,7 +617,7 @@ const FilterSidebar = ({ filters, onFilterChange, category, products }) => {
     }));
   };
 
-  // Generate season options from actual product data
+  // season options
   const seasonOptions = useMemo(() => {
     if (!products || !Array.isArray(products)) return [];
 
@@ -1146,6 +1146,17 @@ export default function CategoryPage() {
   });
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(9);
+
+  // Set document title with category name
+  useEffect(() => {
+    if (data?.category) {
+      document.title = `${data.category} - Alvanta`;
+    } else if (category) {
+      document.title = `${category.charAt(0).toUpperCase() + category.slice(1)} - Alvanta`;
+    } else {
+      document.title = 'Category - Alvanta';
+    }
+  }, [data?.category, category]);
 
   // Filter and sort products
   const filteredProducts = useMemo(() => {

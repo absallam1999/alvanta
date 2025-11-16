@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
   BookOpen,
@@ -26,7 +26,10 @@ import { Button } from '../../components/ui/button';
 import { Badge } from '../../components/ui/badge';
 
 export default function HelpPage() {
-  // Floating orbs
+  useEffect(() => {
+    document.title = 'Help - Alvanta';
+  }, []);
+
   const FloatingOrbs = () => (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {[

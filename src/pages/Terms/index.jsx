@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -13,7 +14,6 @@ import { Button } from '../../components/ui/button';
 import { Card } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 
-// Floating Icons
 const FloatingIcons = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <motion.div
@@ -63,6 +63,10 @@ const stagger = {
 };
 
 export default function TermsPage() {
+  useEffect(() => {
+    document.title = 'Terms - Alvanta';
+  }, []);
+
   return (
     <div
       className="min-h-screen relative overflow-hidden"

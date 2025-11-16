@@ -65,6 +65,8 @@ const CategoriesSection = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Home - Alvanta";
+    
     const fetchCategories = async () => {
       try {
         setLoading(true);

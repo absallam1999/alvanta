@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -77,6 +78,10 @@ const stagger = {
 };
 
 export default function PrivacyPage() {
+useEffect(() => {
+  document.title = 'Privacy - Alvanta';
+}, [])
+
   return (
     <div
       className="min-h-screen relative overflow-hidden"

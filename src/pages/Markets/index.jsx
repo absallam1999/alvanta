@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
   ArrowRight,
@@ -220,6 +220,10 @@ const MilestoneItem = ({ milestone, index, isLast }) => {
 };
 
 export default function MarketsPage() {
+  useEffect(() => {
+    document.title = 'Markets - Alvanta';
+  }, []);
+
   // Market sectors
   const marketSectors = [
     {

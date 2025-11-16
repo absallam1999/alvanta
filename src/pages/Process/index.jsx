@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useInView } from 'framer-motion';
 import {
   Shield,
@@ -211,6 +211,10 @@ const Steps = ({ step, index }) => {
 };
 
 export default function ProcessPage() {
+  useEffect(() => {
+    document.title = 'Process - Alvanta';
+  }, []);
+
   const { scrollYProgress } = useScroll();
 
   const agricultureSteps = [
