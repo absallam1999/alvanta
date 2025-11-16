@@ -87,9 +87,9 @@ export default function AboutPage() {
     {
       icon: BarChart2,
       number: 100,
-      label: 'Supply Chain Transparency',
+      label: 'Client Satisfying',
       suffix: '%',
-      description: 'Blockchain-verified traceability',
+      description: 'Client-verified satisfying',
     },
   ];
 
@@ -487,7 +487,7 @@ export default function AboutPage() {
               </div>
               <ul className="space-y-3">
                 {[
-                  'Blockchain traceability from farm to table',
+                  'Product traceability from farm to table',
                   'Carbon-neutral supply chain operations',
                   'GlobalGAP & ISO 22000 certified',
                   '85%+ revenue returned to farmers',

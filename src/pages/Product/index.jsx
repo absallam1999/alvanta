@@ -1623,7 +1623,7 @@ const ProductDisplay = ({ product, category }) => {
               <span className="flex items-center gap-2 transition-colors group-hover:text-emerald-600">
                 <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
                 <span style={{ color: 'var(--color-text-muted)' }}>
-                  Back to Products
+                  Back
                 </span>
               </span>
             </Button>
