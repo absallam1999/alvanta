@@ -65,8 +65,8 @@ const CategoriesSection = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    document.title = "Home - Alvanta";
-    
+    document.title = 'Home - Alvanta';
+
     const fetchCategories = async () => {
       try {
         setLoading(true);
@@ -79,7 +79,6 @@ const CategoriesSection = () => {
             description: data.vegetables.description,
             heroImage: data.vegetables.heroImage,
             productCount: data.vegetables.products.length,
-            featuredCount: data.vegetables.featured?.length || 0,
             gradient: 'from-emerald-500 to-teal-600',
             bgGradient:
               'from-emerald-50/80 to-teal-50/60 dark:from-emerald-950/40 dark:to-teal-950/30',
@@ -91,7 +90,6 @@ const CategoriesSection = () => {
             description: data.fruits.description,
             heroImage: data.fruits.heroImage,
             productCount: data.fruits.products.length,
-            featuredCount: data.fruits.featured?.length || 0,
             gradient: 'from-orange-500 to-red-500',
             bgGradient:
               'from-orange-50/80 to-red-50/60 dark:from-orange-950/40 dark:to-red-950/30',
@@ -103,7 +101,6 @@ const CategoriesSection = () => {
             description: data.crops.description,
             heroImage: data.crops.heroImage,
             productCount: data.crops.products.length,
-            featuredCount: data.crops.featured?.length || 0,
             gradient: 'from-indigo-500 to-purple-600',
             bgGradient:
               'from-indigo-50/80 to-purple-50/60 dark:from-indigo-950/40 dark:to-purple-950/30',
@@ -228,13 +225,6 @@ const CategoriesSection = () => {
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}
                     />
-
-                    {/* Featured Badge */}
-                    <div className="absolute top-4 right-4 z-20">
-                      <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-700 dark:text-gray-300">
-                        {category.featuredCount} Featured
-                      </div>
-                    </div>
                   </div>
 
                   {/* Content */}
@@ -264,10 +254,6 @@ const CategoriesSection = () => {
                             className={`w-2 h-2 rounded-full bg-gradient-to-r ${category.gradient}`}
                           />
                           {category.productCount} Products
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <div className="w-2 h-2 rounded-full bg-amber-500" />
-                          {category.featuredCount} Featured
                         </span>
                       </div>
                     </div>

@@ -6,7 +6,7 @@
     {
       "id": "lima-bean",
       "name": "Lima Beans",
-      "variety": "Baby Lima, Fordhook",
+      "variety": "Class A ",
       "image": "/images/products/lima-bean.jpg",
       "description": "Versatile legumes known for their creamy texture and nutritional benefits. Perfect for traditional dishes, soups, and healthy meal preparations.",
       "nutrition": {
@@ -76,7 +76,7 @@
     {
       "id": "premium-peanuts",
       "name": "Peanuts",
-      "variety": "Virginia, Runner, Spanish, Valencia",
+      "variety": "American, Arbansh ",
       "image": "/images/products/premium-peanuts.jpg",
       "description": "High-quality peanuts known for their rich flavor and excellent nutritional profile. Perfect for snacking, peanut butter production, and culinary applications worldwide.",
       "nutrition": {

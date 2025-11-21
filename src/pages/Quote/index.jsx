@@ -161,9 +161,21 @@ export default function QuotePage() {
     setError('');
 
     try {
-      await submitForm(formData, 'quote');
+      const mappedData = {
+        name: `${formData.firstName} ${formData.lastName}`.trim(),
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        product: formData.productType,
+        quantity: formData.quantity,
+        message: formData.specialRequirements,
+        deliveryTimeline: formData.deliveryTimeline,
+        serviceType: formData.serviceType,
+        deliveryAddress: formData.deliveryAddress,
+      };
 
-      // Show success step
+      await submitForm(mappedData, 'quote');
+
       setAnimations((prev) => ({ ...prev, submit: true }));
       setTimeout(() => {
         setAnimations((prev) => ({ ...prev, submit: false }));
@@ -171,9 +183,7 @@ export default function QuotePage() {
       }, 1000);
     } catch (err) {
       console.error('Error submitting quote:', err);
-      setError(
-        'Failed to submit your quote request. Please try again or contact us directly.'
-      );
+      setError('Failed to submit your quote request. Please try again.');
     } finally {
       setLoading(false);
     }

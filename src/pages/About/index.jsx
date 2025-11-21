@@ -43,7 +43,7 @@ export default function AboutPage() {
   };
 
   useEffect(() => {
-    document.title = "About - Alvanta";
+    document.title = 'About - Alvanta';
 
     const observers = {};
 

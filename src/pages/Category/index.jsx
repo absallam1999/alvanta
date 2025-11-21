@@ -189,7 +189,7 @@ const ProductCard = ({ product, category, viewMode = 'grid' }) => {
         <Card
           className={`hover:shadow-xl transition-all duration-300 flex ${
             isListView
-              ? 'p-4 flex-row items-center gap-4 h-32'
+              ? 'p-4 flex-row items-center gap-4 h-42'
               : 'p-6 flex-col h-full'
           }`}
           style={{
@@ -1048,7 +1048,7 @@ const SearchSortBar = ({
           placeholder="Search products..."
           value={searchQuery}
           onChange={(e) => onSearch(e.target.value)}
-          className="pl-10 pr-4 focus:border-emerald-500 focus:ring-emerald-500"
+          className="pl-12 pr-4 focus:border-emerald-500 focus:ring-emerald-500"
           style={{
             background: 'var(--color-bg-primary)',
             borderColor: 'var(--color-border-primary)',

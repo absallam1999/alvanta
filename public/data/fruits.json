@@ -6,7 +6,7 @@
     {
       "id": "strawberry",
       "name": "Strawberries",
-      "variety": "Albion, San Andreas",
+      "variety": "Fortuna , Festival , Sunshine ",
       "image": "/images/products/strawberry.jpg",
       "description": "Fresh, sweet strawberries with perfect aroma and texture. Ideal for fresh consumption, desserts, and food processing.",
       "nutrition": {
@@ -40,7 +40,7 @@
     {
       "id": "grapes",
       "name": "Table Grapes",
-      "variety": "Red Globe, Crimson, Thompson",
+      "variety": "Red Globe, Crimson, Flame",
       "image": "/images/products/grapes.jpg",
       "description": "Sweet, crisp table grapes with excellent shelf life. Perfect for snacking and fruit platters with consistent sweetness and size.",
       "nutrition": {
@@ -144,7 +144,7 @@
     {
       "id": "pomegranate",
       "name": "Pomegranates",
-      "variety": "Wonderful, Acco",
+      "variety": "Wonderful, 116 ",
       "image": "/images/products/pomegranate.jpg",
       "description": "Ruby-red pomegranates with sweet-tart arils packed with antioxidants. Known for their health benefits and unique flavor.",
       "nutrition": {

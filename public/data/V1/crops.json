@@ -1,0 +1,131 @@
+{
+  "category": "Crops",
+  "description": "High-value specialty crops and grains for international markets. Our specialty crops portfolio includes unique varieties grown using sustainable practices to meet the demands of discerning customers worldwide.",
+  "heroImage": "/images/categories/crops-hero.jpg",
+  "products": [
+    {
+      "id": "lima-bean",
+      "name": "Lima Beans",
+      "variety": "Baby Lima, Fordhook",
+      "image": "/images/products/lima-bean.jpg",
+      "description": "Versatile legumes known for their creamy texture and nutritional benefits. Perfect for traditional dishes, soups, and healthy meal preparations.",
+      "nutrition": {
+        "protein": "7.8g per 100g cooked",
+        "fiber": "7.2g per 100g cooked",
+        "vitamins": ["B1", "B6", "Folate", "K", "B5"],
+        "minerals": ["Iron", "Magnesium", "Potassium", "Manganese", "Phosphorus", "Copper"],
+        "calories": 113,
+        "carbohydrates": "20.9g",
+        "sugar": "2.8g",
+        "fat": "0.7g",
+        "aminoAcids": ["Lysine", "Tryptophan", "Methionine"],
+        "antioxidants": ["Flavonoids", "Tannins"],
+        "resistantStarch": "Moderate to High",
+        "prebioticFiber": "Yes",
+        "phytonutrients": ["Saponins", "Phytates"]
+      },
+      "specifications": {
+        "type": "Dried beans",
+        "size": "Small (baby) or Large",
+        "color": "Cream to pale green",
+        "shelfLife": "12-18 months",
+        "packaging": "25kg poly bags, 500g consumer packs"
+      },
+      "seasons": {
+        "peak": ["Summer"],
+        "available": "Year-round",
+        "bestMonths": ["July", "August", "September"]
+      },
+      "growingMethod": "Open Field",
+      "origin": "Egypt"
+    },
+    {
+      "id": "rice-standard",
+      "name": "Rice",
+      "variety": "Long Grain, Medium Grain, Short Grain",
+      "image": "/images/products/rice-standard.jpg",
+      "description": "High-quality rice grains suitable for various culinary applications. Known for excellent cooking performance and consistent quality.",
+      "nutrition": {
+        "protein": "6.5g per 100g cooked",
+        "fiber": "0.6g per 100g cooked",
+        "vitamins": ["B1", "B3", "B5", "B6"],
+        "minerals": ["Iron", "Magnesium", "Phosphorus", "Potassium", "Zinc"],
+        "calories": 128,
+        "carbohydrates": "27.9g",
+        "sugar": "0.1g",
+        "fat": "0.2g",
+        "aminoAcids": ["Lysine", "Tryptophan", "Threonine"],
+        "antioxidants": ["Phenolic Acids"],
+        "resistantStarch": "Low to Moderate"
+      },
+      "specifications": {
+        "grainType": "White Rice",
+        "color": "White",
+        "moistureContent": "14% max",
+        "shelfLife": "12-18 months",
+        "packaging": "10kg, 25kg, 50kg bags"
+      },
+      "seasons": {
+        "peak": ["Autumn"],
+        "available": "Year-round",
+        "bestMonths": ["September", "October", "November"]
+      },
+      "growingMethod": "Paddy Field",
+      "origin": "Egypt"
+    },
+    {
+      "id": "premium-peanuts",
+      "name": "Peanuts",
+      "variety": "Virginia, Runner, Spanish, Valencia",
+      "image": "/images/products/premium-peanuts.jpg",
+      "description": "High-quality peanuts known for their rich flavor and excellent nutritional profile. Perfect for snacking, peanut butter production, and culinary applications worldwide.",
+      "nutrition": {
+        "protein": "25.8g per 100g raw",
+        "fiber": "8.5g per 100g raw",
+        "vitamins": ["B3", "E", "B1", "B6", "B9"],
+        "minerals": ["Magnesium", "Phosphorus", "Potassium", "Zinc", "Copper", "Manganese", "Iron"],
+        "calories": 567,
+        "carbohydrates": "16.1g",
+        "sugar": "4.7g",
+        "fat": "49.2g",
+        "aminoAcids": ["Arginine", "Leucine", "Valine", "Phenylalanine"],
+        "antioxidants": ["Resveratrol", "P-Coumaric Acid", "Phytosterols"],
+        "healthyFats": ["Monounsaturated", "Polyunsaturated"],
+        "glutenFree": "Yes",
+        "cholesterol": "0mg"
+      },
+      "specifications": {
+        "type": "Shelled or In-shell",
+        "size": "Medium to Jumbo",
+        "color": "Light to reddish-brown",
+        "moistureContent": "10% max",
+        "shelfLife": "6-12 months (shelled), 9-12 months (in-shell)",
+        "packaging": "25kg bags, 10kg vacuum packs, 500g retail packs"
+      },
+      "seasons": {
+        "peak": ["Autumn"],
+        "available": "Year-round",
+        "bestMonths": ["September", "October", "November"]
+      },
+      "growingMethod": "Open Field",
+      "origin": "Egypt"
+    }
+  ],
+  "qualityStandards": {
+    "certifications": ["GlobalGAP", "ISO 22000", "USDA Organic", "EU Organic", "Non-GMO Verified"],
+    "grading": "Premium Grade A",
+    "purity": "99.9% minimum",
+    "traceability": "Full supply chain documentation"
+  },
+  "packagingOptions": [
+    "Retail packs (250g-2kg)",
+    "Bulk poly bags (5kg-25kg)",
+    "Vacuum sealed packs",
+    "Food-grade containers"
+  ],
+  "storageRequirements": {
+    "temperature": "Cool, dry place below 15°C",
+    "humidity": "Below 65%",
+    "specialNotes": "Protect from sunlight, moisture, and store in airtight containers to prevent rancidity"
+  }
+}

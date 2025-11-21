@@ -5,8 +5,8 @@
   "products": [
     {
       "id": "onion-yellow",
-      "name": "Yellow Onions",
-      "variety": "Granex, Vidalia",
+      "name": "Onions",
+      "variety": "Red, Yellow",
       "image": "/images/products/onion-yellow.jpg",
       "description": "Versatile cooking onions with balanced pungency and sweet undertones. Excellent for storage and various culinary applications.",
       "nutrition": {
@@ -37,7 +37,7 @@
     {
       "id": "spring-onion",
       "name": "Spring Onions",
-      "variety": "Green Onions, Scallions",
+      "variety": "Green Onions, Photon",
       "image": "/images/products/spring-onion.jpg",
       "description": "Fresh, mild-flavored spring onions with crisp green tops and small white bulbs. Perfect for salads, garnishes, and Asian cuisine.",
       "nutrition": {
@@ -68,7 +68,7 @@
     {
       "id": "sweet-potato",
       "name": "Sweet Potatoes",
-      "variety": "Beauregard, Covington",
+      "variety": "Beauregard, Bellevue",
       "image": "/images/products/sweet-potato.jpg",
       "description": "Sweet, nutritious root vegetables with vibrant orange flesh. Rich in vitamins and perfect for healthy eating and traditional dishes.",
       "nutrition": {
@@ -132,7 +132,7 @@
     {
       "id": "lemon",
       "name": "Fresh Lemons",
-      "variety": "Eureka, Lisbon",
+      "variety": "Eureka, Adalia",
       "image": "/images/products/lemon.jpg",
       "description": "Juicy, acidic lemons with bright yellow skin and high juice content. Essential for culinary uses, beverages, and food processing.",
       "nutrition": {
@@ -164,7 +164,7 @@
     {
       "id": "garlic",
       "name": "Garlic Bulbs",
-      "variety": "Softneck, Hardneck",
+      "variety": "Egyptian, Chinese",
       "image": "/images/products/garlic.jpg",
       "description": "Aromatic garlic bulbs with strong flavor and medicinal properties. Carefully cured for long storage and consistent quality.",
       "nutrition": {

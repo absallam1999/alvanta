@@ -1585,7 +1585,7 @@ const ProductDisplay = ({ product, category }) => {
       label: 'Quality Certified',
       value: 'GlobalGAP & ISO 22000',
     },
-    { icon: Truck, label: 'Fast Shipping', value: '7-15 Business Days' },
+    { icon: Truck, label: 'Fast Shipping', value: '22-30 Business Days' },
     { icon: Users, label: 'Farm Partners', value: '2000+ Sustainable Farms' },
     { icon: Globe, label: 'Global Reach', value: '12+ Countries' },
   ];

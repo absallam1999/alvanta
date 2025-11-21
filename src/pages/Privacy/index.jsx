@@ -78,9 +78,9 @@ const stagger = {
 };
 
 export default function PrivacyPage() {
-useEffect(() => {
-  document.title = 'Privacy - Alvanta';
-}, [])
+  useEffect(() => {
+    document.title = 'Privacy - Alvanta';
+  }, []);
 
   return (
     <div

@@ -1,0 +1,214 @@
+{
+  "category": "Vegetables",
+  "description": "Premium quality vegetables sourced from sustainable farms worldwide. Our vegetable exports meet the highest international standards for freshness, taste, and nutritional value. Grown using eco-friendly practices and harvested at peak quality.",
+  "heroImage": "/images/categories/vegetables-hero.jpg",
+  "products": [
+    {
+      "id": "onion-yellow",
+      "name": "Yellow Onions",
+      "variety": "Granex, Vidalia",
+      "image": "/images/products/onion-yellow.jpg",
+      "description": "Versatile cooking onions with balanced pungency and sweet undertones. Excellent for storage and various culinary applications.",
+      "nutrition": {
+        "vitamins": ["C", "B6", "B9"],
+        "minerals": ["Potassium", "Manganese", "Phosphorus"],
+        "calories": 42,
+        "protein": "1.2g",
+        "carbohydrates": "9.8g",
+        "fiber": "1.9g",
+        "sugar": "4.5g",
+        "fat": "0.1g",
+        "antioxidants": ["Quercetin", "Sulfur compounds"]
+      },
+      "specifications": {
+        "size": "50-70mm",
+        "skin": "Golden brown, firm",
+        "shelfLife": "2-3 months",
+        "packaging": "10kg & 25kg mesh bags"
+      },
+      "seasons": {
+        "peak": ["Spring", "Fall"],
+        "available": "Year-round",
+        "bestMonths": ["March", "April", "August", "September"]
+      },
+      "growingMethod": "Open Field",
+      "origin": "Egypt"
+    },
+    {
+      "id": "spring-onion",
+      "name": "Spring Onions",
+      "variety": "Green Onions, Scallions",
+      "image": "/images/products/spring-onion.jpg",
+      "description": "Fresh, mild-flavored spring onions with crisp green tops and small white bulbs. Perfect for salads, garnishes, and Asian cuisine.",
+      "nutrition": {
+        "vitamins": ["K", "C", "A", "B2"],
+        "minerals": ["Calcium", "Iron", "Magnesium"],
+        "calories": 32,
+        "protein": "1.8g",
+        "carbohydrates": "7.3g",
+        "fiber": "2.6g",
+        "sugar": "2.3g",
+        "fat": "0.2g",
+        "chlorophyll": "High"
+      },
+      "specifications": {
+        "length": "25-35cm",
+        "color": "Bright green tops, white bulbs",
+        "shelfLife": "7-10 days",
+        "packaging": "1kg bunches, 5kg cases"
+      },
+      "seasons": {
+        "peak": ["Spring", "Summer"],
+        "available": "Year-round",
+        "bestMonths": ["April", "May", "June", "July"]
+      },
+      "growingMethod": "Open Field & Greenhouse",
+      "origin": "Egypt"
+    },
+    {
+      "id": "sweet-potato",
+      "name": "Sweet Potatoes",
+      "variety": "Beauregard, Covington",
+      "image": "/images/products/sweet-potato.jpg",
+      "description": "Sweet, nutritious root vegetables with vibrant orange flesh. Rich in vitamins and perfect for healthy eating and traditional dishes.",
+      "nutrition": {
+        "vitamins": ["A", "C", "B6", "E"],
+        "minerals": ["Potassium", "Manganese", "Copper"],
+        "calories": 90,
+        "protein": "2.0g",
+        "carbohydrates": "20.7g",
+        "fiber": "3.3g",
+        "sugar": "6.5g",
+        "fat": "0.2g",
+        "betaCarotene": "Very High",
+        "antioxidants": ["Anthocyanins"]
+      },
+      "specifications": {
+        "size": "15-20cm length",
+        "flesh": "Moist, orange",
+        "shelfLife": "3-4 weeks",
+        "packaging": "5kg, 10kg cartons"
+      },
+      "seasons": {
+        "peak": ["Fall"],
+        "available": "August-March",
+        "bestMonths": ["September", "October", "November"]
+      },
+      "growingMethod": "Open Field",
+      "origin": "Egypt"
+    },
+    {
+      "id": "capsicum",
+      "name": "Capsicum (Bell Peppers)",
+      "variety": "Red, Yellow, Green",
+      "image": "/images/products/capsicum.jpg",
+      "description": "Sweet, crunchy bell peppers in vibrant colors. Low in calories and high in vitamins C and A. Perfect for fresh consumption and cooking.",
+      "nutrition": {
+        "vitamins": ["C", "A", "B6", "K"],
+        "minerals": ["Potassium", "Manganese", "Magnesium"],
+        "calories": 31,
+        "protein": "1.0g",
+        "carbohydrates": "6.0g",
+        "fiber": "2.1g",
+        "sugar": "4.2g",
+        "fat": "0.3g",
+        "antioxidants": ["Capsanthin", "Quercetin"],
+        "waterContent": "92%"
+      },
+      "specifications": {
+        "size": "8-12cm diameter",
+        "weight": "150-250g",
+        "shelfLife": "10-14 days",
+        "packaging": "4kg, 8kg cartons"
+      },
+      "seasons": {
+        "peak": ["Summer", "Early Fall"],
+        "available": "Year-round",
+        "bestMonths": ["June", "July", "August", "September"]
+      },
+      "growingMethod": "Greenhouse & Open Field",
+      "origin": "Egypt"
+    },
+    {
+      "id": "lemon",
+      "name": "Fresh Lemons",
+      "variety": "Eureka, Lisbon",
+      "image": "/images/products/lemon.jpg",
+      "description": "Juicy, acidic lemons with bright yellow skin and high juice content. Essential for culinary uses, beverages, and food processing.",
+      "nutrition": {
+        "vitamins": ["C", "B6", "A", "E"],
+        "minerals": ["Potassium", "Calcium", "Iron"],
+        "calories": 29,
+        "protein": "1.1g",
+        "carbohydrates": "9.3g",
+        "fiber": "2.8g",
+        "sugar": "2.5g",
+        "fat": "0.3g",
+        "citricAcid": "High",
+        "antioxidants": ["Limonin", "Hesperidin"]
+      },
+      "specifications": {
+        "size": "50-70mm diameter",
+        "juiceContent": "30-40%",
+        "shelfLife": "3-4 weeks",
+        "packaging": "5kg, 10kg cartons"
+      },
+      "seasons": {
+        "peak": ["Winter", "Spring"],
+        "available": "Year-round",
+        "bestMonths": ["December", "January", "February", "March"]
+      },
+      "growingMethod": "Orchard",
+      "origin": "Egypt"
+    },
+    {
+      "id": "garlic",
+      "name": "Garlic Bulbs",
+      "variety": "Softneck, Hardneck",
+      "image": "/images/products/garlic.jpg",
+      "description": "Aromatic garlic bulbs with strong flavor and medicinal properties. Carefully cured for long storage and consistent quality.",
+      "nutrition": {
+        "vitamins": ["C", "B6", "B1"],
+        "minerals": ["Manganese", "Selenium", "Calcium"],
+        "calories": 149,
+        "protein": "6.4g",
+        "carbohydrates": "33.1g",
+        "fiber": "2.1g",
+        "sugar": "1.0g",
+        "fat": "0.5g",
+        "sulfurCompounds": ["Allicin", "Ajoene"],
+        "antioxidants": ["High"]
+      },
+      "specifications": {
+        "bulbSize": "5-6cm diameter",
+        "clovesPerBulb": "10-16",
+        "shelfLife": "3-6 months",
+        "packaging": "5kg, 10kg mesh bags"
+      },
+      "seasons": {
+        "peak": ["Summer"],
+        "available": "Year-round",
+        "bestMonths": ["June", "July", "August"]
+      },
+      "growingMethod": "Open Field",
+      "origin": "Egypt"
+    }
+  ],
+  "qualityStandards": {
+    "certifications": ["GlobalGAP", "ISO 22000", "HACCP"],
+    "grading": "EU Class I & Extra Class",
+    "pesticideResidue": "Below MRL limits",
+    "traceability": "Full supply chain tracking"
+  },
+  "packagingOptions": [
+    "Consumer packs (500g-2kg)",
+    "Bulk cartons (5kg-25kg)",
+    "Modified atmosphere packaging",
+    "Mesh bags and crates"
+  ],
+  "storageRequirements": {
+    "temperature": "0-4°C (most vegetables)",
+    "humidity": "85-95%",
+    "specialNotes": "Garlic: dry storage at room temperature"
+  }
+}
