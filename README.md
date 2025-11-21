@@ -19,15 +19,6 @@ The project is designed to be **fast**, **maintainable**, and **visually appeali
 - **Linting / Formatting:** ESLint, Prettier  
 - **Build & Deployment:** Optimized for production, ready for hosting (e.g., Vercel, Netlify)  
 
-**Folder Structure:**
-├─ public/
-└─ src/
-├─ assets/
-├─ components/
-├─ pages/
-├─ styles/
-└─ App.jsx
-
 ---
 
 ## Features  
